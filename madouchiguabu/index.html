@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>麻豆吃瓜不打烊早知道-影视观察与舆情速览</title>
+<meta name="description" content="麻豆吃瓜不打烊早知道：梳理短剧与影视圈的更新动态、平台规则变化、演员作品归属与网友讨论走向，提供可核对的片单、时间线与判断方法，帮你在信息洪流里分清事实、回应与猜测。">
+<meta name="keywords" content="麻豆吃瓜不打烊早知道">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231c2b3a'/%3E%3Cpath d='M9 21c2-7 5-10 10-10 3 0 4 2 4 4 0 4-4 7-9 7-2 0-4-0.5-5-1z' fill='%23f2b544'/%3E%3Ccircle cx='12' cy='11' r='2' fill='%23e2574c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#18222c;
+  --ink-2:#3c4a58;
+  --ink-3:#64727f;
+  --paper:#f7f4ee;
+  --card:#ffffff;
+  --line:#e2ddd2;
+  --brand:#1c2b3a;
+  --accent:#e2574c;
+  --gold:#f2b544;
+  --mint:#2f7f6f;
+  --blue:#2b5c8a;
+  --radius:14px;
+  --radius-s:8px;
+  --shadow:0 2px 10px rgba(24,34,44,.07);
+  --shadow-h:0 6px 18px rgba(24,34,44,.12);
+  --gap:18px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:1.2em}
+li{margin:4px 0}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section[id]{scroll-margin-top:132px}
+
+/* 公告条 */
+.notice{
+  position:sticky;top:0;z-index:60;
+  background:var(--brand);color:#f2eee6;
+  font-size:13.5px;
+}
+.notice-inner{display:flex;gap:12px;align-items:center;max-width:1180px;margin:0 auto;padding:8px 20px;flex-wrap:wrap}
+.notice-tag{
+  background:var(--gold);color:#2a2000;font-weight:700;
+  padding:1px 8px;border-radius:20px;font-size:12px;white-space:nowrap;
+}
+.notice a{color:#ffd98a;border-bottom:1px dotted #ffd98a}
+.notice a:hover{color:#fff}
+
+/* 页头 */
+.header{
+  position:sticky;top:35px;z-index:55;
+  background:rgba(247,244,238,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;gap:20px;padding:12px 20px;max-width:1180px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-text b{font-size:16px;letter-spacing:.5px}
+.brand-text span{font-size:11px;color:var(--ink-3);letter-spacing:1px}
+.nav-main{margin-left:auto;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.nav-main a{
+  padding:6px 12px;border-radius:20px;font-size:14.5px;color:var(--ink-2);
+  transition:background .18s,color .18s;
+}
+.nav-main a:hover{background:#ece6da;color:var(--ink)}
+.nav-main a.active{background:var(--brand);color:#fff}
+.header-tools{display:flex;align-items:center;gap:8px;flex:none}
+.search-box{position:relative}
+.search-box input{
+  width:180px;padding:7px 10px 7px 32px;border:1px solid var(--line);
+  border-radius:20px;background:#fff;font-size:13.5px;color:var(--ink);
+}
+.search-box input:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px rgba(43,92,138,.15)}
+.search-box svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:var(--ink-3)}
+.search-result{
+  position:absolute;top:calc(100% + 8px);right:0;width:280px;max-height:300px;overflow:auto;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-s);box-shadow:var(--shadow-h);
+  padding:6px;display:none;font-size:13.5px;z-index:70;
+}
+.search-result.on{display:block}
+.search-result a{display:block;padding:6px 8px;border-radius:6px;color:var(--ink-2)}
+.search-result a:hover{background:#f4efe5}
+.search-result .empty{padding:8px;color:var(--ink-3)}
+.menu-btn{
+  display:none;border:1px solid var(--line);background:#fff;border-radius:8px;
+  padding:6px 10px;font-size:14px;color:var(--ink-2);cursor:pointer;
+}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#1c2b3a 0%,#243a4d 55%,#2f4a5c 100%);
+  color:#f4f1ea;
+  padding:52px 0 46px;
+}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative;z-index:2}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#ffd98a;letter-spacing:1px;margin-bottom:14px}
+.hero-kicker::before{content:"";width:22px;height:2px;background:var(--gold);display:inline-block}
+.hero h1{font-size:clamp(26px,3.4vw,40px);letter-spacing:.5px;margin-bottom:16px}
+.hero p.lead{color:#d9e2e8;font-size:16.5px;max-width:34em;margin-bottom:22px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn{
+  display:inline-block;padding:10px 20px;border-radius:24px;font-size:15px;font-weight:600;
+  transition:transform .18s,box-shadow .18s,background .18s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--gold);color:#2a2000;box-shadow:0 4px 12px rgba(242,181,68,.3)}
+.btn-ghost{border:1px solid rgba(255,255,255,.35);color:#f4f1ea}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-stats{display:flex;gap:26px;flex-wrap:wrap;font-size:13.5px;color:#b9c8d3}
+.hero-stats b{display:block;font-size:22px;color:#fff;font-weight:700;line-height:1.2}
+.hero-visual{position:relative;height:300px}
+.hero-visual svg{width:100%;height:100%}
+.hero-badge{
+  position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  backdrop-filter:blur(4px);border-radius:12px;padding:8px 12px;font-size:12.5px;color:#e9eef2;
+}
+.hero-badge.b1{top:8px;right:0}
+.hero-badge.b2{bottom:14px;left:0}
+.hero-waves{position:absolute;inset:0;opacity:.12;z-index:1}
+
+/* 主内容布局 */
+.layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:34px;
+  padding:44px 0 60px;align-items:start;
+}
+.main-col{min-width:0}
+.side-col{position:sticky;top:140px}
+.block{margin-bottom:44px}
+.block:last-child{margin-bottom:0}
+.block-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.block-head h2{font-size:23px;letter-spacing:.3px}
+.block-head h2::before{
+  content:"";display:inline-block;width:8px;height:8px;background:var(--accent);
+  border-radius:2px;margin-right:8px;transform:translateY(-3px);
+}
+.block-head .sub{font-size:13px;color:var(--ink-3)}
+.more-link{margin-left:auto;font-size:13.5px;color:var(--blue);border-bottom:1px solid transparent}
+.more-link:hover{border-color:var(--blue)}
+
+/* 领域概览 */
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.ov-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;box-shadow:var(--shadow);
+}
+.ov-card h3{font-size:16px;margin-bottom:6px}
+.ov-card p{font-size:13.8px;color:var(--ink-2);margin:0}
+.ov-num{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:1px;display:block;margin-bottom:4px}
+
+/* 精选推荐卡片 */
+.rec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
+.rec-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s;
+}
+.rec-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-h)}
+.rec-card img{width:100%;height:150px;object-fit:cover}
+.rec-body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column}
+.rec-tag{font-size:11.5px;color:var(--accent);font-weight:700;letter-spacing:.5px;margin-bottom:4px}
+.rec-card h3{font-size:16px;margin-bottom:6px}
+.rec-card p{font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+.rec-meta{margin-top:auto;font-size:12px;color:var(--ink-3);display:flex;gap:10px;flex-wrap:wrap}
+
+/* 紧凑列表 */
+.tight-list{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.tight-item{display:flex;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line);align-items:flex-start}
+.tight-item:last-child{border-bottom:none}
+.tight-item:hover{background:#faf7f0}
+.t-date{font-size:12.5px;color:var(--ink-3);white-space:nowrap;padding-top:3px;min-width:66px}
+.t-body h3{font-size:15px;margin-bottom:3px}
+.t-body p{font-size:13px;color:var(--ink-2);margin:0}
+.t-type{font-size:11px;padding:1px 7px;border-radius:10px;margin-left:6px;vertical-align:1px;white-space:nowrap}
+.type-fact{background:#e4f1ec;color:var(--mint)}
+.type-reply{background:#e7eef7;color:var(--blue)}
+.type-rumor{background:#fbe9e7;color:var(--accent)}
+
+/* 分类入口标签 */
+.tag-index{display:flex;flex-wrap:wrap;gap:10px}
+.tag-index a{
+  background:#fff;border:1px solid var(--line);border-radius:22px;
+  padding:8px 16px;font-size:14px;color:var(--ink-2);
+  transition:background .18s,border-color .18s,color .18s;
+}
+.tag-index a:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.tag-index a span{color:var(--ink-3);font-size:12px;margin-left:4px}
+.tag-index a:hover span{color:#cfd9e2}
+
+/* 深度解析 */
+.article{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px 30px;box-shadow:var(--shadow);
+}
+.article h3{font-size:18px;margin:24px 0 8px;color:var(--brand);border-left:3px solid var(--accent);padding-left:10px}
+.article h3:first-child{margin-top:0}
+.article p{font-size:15px;color:var(--ink-2)}
+.article blockquote{
+  margin:16px 0;padding:14px 18px;background:#faf6ec;border-left:4px solid var(--gold);
+  border-radius:0 8px 8px 0;font-size:14.5px;color:var(--ink-2);
+}
+.article ol{padding-left:1.4em;font-size:14.5px;color:var(--ink-2)}
+.article ol li{margin:6px 0}
+.check-table{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0 6px}
+.check-table th,.check-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.check-table th{background:#f4efe4;color:var(--ink);font-weight:600;width:34%}
+.check-table td{color:var(--ink-2)}
+
+/* 编号步骤 */
+.steps{counter-reset:step;display:grid;gap:12px}
+.step{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);
+  padding:14px 16px 14px 54px;position:relative;box-shadow:var(--shadow);
+}
+.step::before{
+  counter-increment:step;content:counter(step);
+  position:absolute;left:14px;top:14px;width:26px;height:26px;border-radius:50%;
+  background:var(--brand);color:#fff;font-size:13px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.step h3{font-size:15px;margin-bottom:3px}
+.step p{font-size:13.5px;color:var(--ink-2);margin:0}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+.compare > div{padding:18px 20px}
+.compare .col-a{background:#fbf8f1;border-right:1px solid var(--line)}
+.compare .col-b{background:#fff}
+.compare h3{font-size:15px;margin-bottom:10px}
+.compare ul{font-size:13.8px;color:var(--ink-2);margin:0;padding-left:1.1em}
+.compare li{margin:6px 0}
+
+/* FAQ */
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);margin-bottom:10px;box-shadow:var(--shadow)}
+.faq-item summary{
+  padding:13px 16px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:20px;color:var(--accent);font-weight:400;line-height:1}
+.faq-item[open] summary::after{content:"−"}
+.faq-item .faq-body{padding:0 16px 14px;font-size:14.2px;color:var(--ink-2)}
+.faq-item .faq-body p:last-child{margin-bottom:0}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.comment{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;
+}
+.comment-head{display:flex;align-items:center;gap:10px}
+.avatar{
+  width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex:none;
+}
+.comment-head b{font-size:14px}
+.comment-head span{font-size:11.5px;color:var(--ink-3)}
+.comment p{font-size:13.8px;color:var(--ink-2);margin:0}
+.comment .ref{
+  font-size:12px;color:var(--blue);background:#e7eef7;border-radius:6px;
+  padding:3px 8px;align-self:flex-start;
+}
+.comment .mood{font-size:11.5px;color:var(--ink-3);margin-left:auto}
+
+/* 侧栏 */
+.side-box{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;box-shadow:var(--shadow);margin-bottom:var(--gap);
+}
+.side-box h3{font-size:15px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.side-nav{display:flex;flex-direction:column;gap:2px}
+.side-nav a{
+  font-size:14px;color:var(--ink-2);padding:6px 10px;border-radius:6px;
+  border-left:3px solid transparent;transition:background .16s,color .16s,border-color .16s;
+}
+.side-nav a:hover{background:#f4efe5}
+.side-nav a.on{background:#f4efe5;color:var(--brand);border-left-color:var(--accent);font-weight:600}
+.rank-list{list-style:none;padding:0;margin:0;counter-reset:rank}
+.rank-list li{
+  counter-increment:rank;display:flex;gap:10px;align-items:flex-start;
+  padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.8px;
+}
+.rank-list li:last-child{border-bottom:none}
+.rank-list li::before{
+  content:counter(rank);flex:none;width:20px;height:20px;border-radius:5px;
+  background:#e9e2d4;color:var(--ink-2);font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.rank-list li:nth-child(-n+3)::before{background:var(--gold);color:#2a2000}
+.rank-list a:hover{color:var(--blue)}
+.pick-tags{display:flex;flex-wrap:wrap;gap:8px}
+.pick-tags a{
+  font-size:13px;background:#f4efe5;border-radius:16px;padding:5px 12px;color:var(--ink-2);
+}
+.pick-tags a:hover{background:var(--brand);color:#fff}
+
+/* 页脚 */
+.footer{background:var(--brand);color:#c8d3db;padding:44px 0 28px;margin-top:20px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+.footer h4{color:#fff;font-size:14.5px;margin-bottom:12px}
+.footer p{font-size:13px;color:#9fb0bc;margin:0}
+.footer .f-brand{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.footer .f-brand svg{width:32px;height:32px}
+.footer .f-brand b{color:#fff;font-size:15px}
+.footer ul{list-style:none;padding:0;margin:0;font-size:13px}
+.footer li{margin:6px 0}
+.footer a:hover{color:#ffd98a}
+.footer-note{
+  border-top:1px solid rgba(255,255,255,.12);padding-top:18px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.5px;color:#8fa1ae;
+}
+.to-top{
+  position:fixed;right:22px;bottom:24px;z-index:80;
+  width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;
+  background:var(--brand);color:#fff;font-size:18px;box-shadow:var(--shadow-h);
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .25s,transform .25s,visibility .25s;
+}
+.to-top.on{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:#2f4a5c}
+
+@media (max-width:1000px){
+  .hero .wrap{grid-template-columns:1fr;gap:26px}
+  .hero-visual{height:220px;max-width:440px}
+  .layout{grid-template-columns:1fr}
+  .side-col{position:static;order:2}
+  .main-col{order:1}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .notice-inner{padding:8px 16px}
+  .header{top:35px}
+  .header-inner{padding:10px 16px;gap:10px}
+  .menu-btn{display:block;order:2}
+  .nav-main{
+    order:4;width:100%;display:none;flex-direction:column;align-items:stretch;gap:2px;
+    padding-top:8px;border-top:1px solid var(--line);
+  }
+  .nav-main.open{display:flex}
+  .nav-main a{padding:9px 12px;border-radius:8px}
+  .header-tools{margin-left:auto;order:3}
+  .search-box input{width:132px}
+  .search-result{width:240px}
+  .overview-grid{grid-template-columns:1fr}
+  .rec-grid,.comment-grid,.compare{grid-template-columns:1fr}
+  .compare .col-a{border-right:none;border-bottom:1px solid var(--line)}
+  .article{padding:20px 18px}
+  .layout{padding:32px 0 48px;gap:24px}
+  .footer-grid{grid-template-columns:1fr;gap:22px}
+  .hero{padding:38px 0 34px}
+  .to-top{right:14px;bottom:16px;width:40px;height:40px}
+}
+@media (max-width:400px){
+  .search-box input{width:108px}
+  .brand-text b{font-size:14px}
+  .block-head h2{font-size:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .rec-card:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="notice" role="region" aria-label="更新公告">
+  <div class="notice-inner">
+    <span class="notice-tag">快讯</span>
+    <span>11月6日 22:40 更新：短剧《旧巷回声》第9集提档至11月8日中午12点，平台排播表已同步；演员陈望舟工作室对“换角”说法发布书面回应。</span>
+    <a href="/#latest">查看更新记录</a>
+  </div>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="/#top" aria-label="回到首页">
+      <svg viewBox="0 0 40 40" aria-hidden="true" role="img">
+        <rect width="40" height="40" rx="10" fill="#1c2b3a"/>
+        <path d="M10 27c2.4-9 6.4-13 13-13 4 0 5.6 2.6 5.6 5.2 0 5-5.2 9-11.6 9-2.6 0-5.2-.6-7-1.2z" fill="#f2b544"/>
+        <circle cx="14.5" cy="13" r="2.6" fill="#e2574c"/>
+        <path d="M22 20.5c1.4.4 2.6 1.2 3.4 2.2" stroke="#1c2b3a" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="brand-text">
+        <b>麻豆吃瓜不打烊早知道</b>
+        <span>影视动态 · 舆情速览</span>
+      </span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navMain">栏目</button>
+    <nav class="nav-main" id="navMain" aria-label="主题导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#picks">精选片单</a>
+      <a href="/#latest">最新更新</a>
+      <a href="/#channels">分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#talk">观众评论</a>
+    </nav>
+    <div class="header-tools">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5" stroke-linecap="round"/></svg>
+        <input type="search" id="searchInput" placeholder="搜片名、演员、事件" aria-label="站内搜索" autocomplete="off">
+        <div class="search-result" id="searchResult" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="主题首屏">
+    <div class="hero-waves" aria-hidden="true">
+      <svg width="100%" height="100%" viewBox="0 0 800 400" preserveAspectRatio="none">
+        <path d="M0 300 Q200 240 400 300 T800 300 V400 H0Z" fill="#ffffff"/>
+        <path d="M0 340 Q200 280 400 340 T800 340 V400 H0Z" fill="#ffffff" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div>
+        <span class="hero-kicker">影视圈信息分层 · 每日梳理</span>
+        <h1>麻豆吃瓜不打烊早知道</h1>
+        <p class="lead">把短剧排播、演员合约、平台规则与网友讨论拆开来看：哪条是官方公告，哪条是二次转述，哪条只是群聊截图。整理片单、时间线和可核对的说法差异，帮你在刷到消息之前先弄明白来龙去脉。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#picks">看今日精选片单</a>
+          <a class="btn btn-ghost" href="/#deep">读深度解析</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>11</b>个常设栏目</div>
+          <div><b>38</b>条本周更新记录</div>
+          <div><b>6</b>类信息可信度分层</div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 420 300" role="img" aria-label="影视信息分层示意构图">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f2b544"/>
+              <stop offset="1" stop-color="#e2574c"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7fb6a8"/>
+              <stop offset="1" stop-color="#2b5c8a"/>
+            </linearGradient>
+          </defs>
+          <rect x="18" y="30" width="250" height="150" rx="14" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.18)"/>
+          <rect x="34" y="52" width="150" height="10" rx="5" fill="url(#g1)"/>
+          <rect x="34" y="74" width="208" height="8" rx="4" fill="rgba(255,255,255,.28)"/>
+          <rect x="34" y="92" width="180" height="8" rx="4" fill="rgba(255,255,255,.2)"/>
+          <rect x="34" y="110" width="204" height="8" rx="4" fill="rgba(255,255,255,.15)"/>
+          <rect x="34" y="136" width="90" height="24" rx="12" fill="url(#g2)"/>
+          <rect x="150" y="150" width="180" height="120" rx="14" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.22)"/>
+          <circle cx="184" cy="184" r="14" fill="url(#g1)"/>
+          <rect x="208" y="174" width="96" height="8" rx="4" fill="rgba(255,255,255,.4)"/>
+          <rect x="208" y="190" width="70" height="6" rx="3" fill="rgba(255,255,255,.22)"/>
+          <rect x="166" y="214" width="146" height="7" rx="3.5" fill="rgba(255,255,255,.24)"/>
+          <rect x="166" y="230" width="118" height="7" rx="3.5" fill="rgba(255,255,255,.18)"/>
+          <rect x="166" y="246" width="134" height="7" rx="3.5" fill="rgba(255,255,255,.14)"/>
+          <path d="M290 46 l30 16 -30 16z" fill="#f2b544" opacity=".9"/>
+        </svg>
+        <span class="hero-badge b1">官方公告层</span>
+        <span class="hero-badge b2">讨论转述层</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <div class="main-col">
+
+      <!-- 领域概览 -->
+      <section class="block" id="overview">
+        <div class="block-head">
+          <h2>领域概览：短剧与演员生态在忙什么</h2>
+          <span class="sub">本周 11/2—11/8</span>
+        </div>
+        <div class="overview-grid">
+          <article class="ov-card">
+            <span class="ov-num">01 · 排播</span>
+            <h3>短剧提档与分账节点</h3>
+            <p>《旧巷回声》第9集从11月10日提到11月8日中午，制作方“拾光映画”在11月6日晚把分账结算周期从月结改为双周结，影响同档期三部剧的宣传节奏。</p>
+          </article>
+          <article class="ov-card">
+            <span class="ov-num">02 · 合约</span>
+            <h3>演员工作室回应换角传闻</h3>
+            <p>陈望舟工作室11月6日发布书面回应，称“未收到任何换角通知”，并附上10月30日签的补充协议时间戳。制片方截至11月7日未再补充说明。</p>
+          </article>
+          <article class="ov-card">
+            <span class="ov-num">03 · 平台</span>
+            <h3>竖屏剧场改版</h3>
+            <p>某竖屏剧场上线“前3集免费+单集解锁”新规则，11月4日起对20部新剧生效。旧规则下的已购用户可申请差价券，兑换窗口到12月5日。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 精选内容推荐 -->
+      <section class="block" id="picks">
+        <div class="block-head">
+          <h2>精选推荐：值得先看的三部与一套合集</h2>
+          <a class="more-link" href="/#latest">更多更新 →</a>
+        </div>
+        <div class="rec-grid">
+          <article class="rec-card">
+            <img src="https://picsum.photos/seed/madou-pick-01/560/300" width="560" height="300" loading="lazy" alt="短剧旧巷回声第9集的巷口夜戏截图示意">
+            <div class="rec-body">
+              <span class="rec-tag">短剧 · 悬疑</span>
+              <h3>《旧巷回声》第9集：一场停电戏的重拍</h3>
+              <p>11月8日中午上线的这集，实际拍摄用了两个版本：先拍的版本因录音穿帮被弃用，重拍时把台灯换成了手电，台词删掉了两句。</p>
+              <div class="rec-meta"><span>拾光映画</span><span>11月8日 12:00</span></div>
+            </div>
+          </article>
+          <article class="rec-card">
+            <img src="https://picsum.photos/seed/madou-pick-02/560/300" width="560" height="300" loading="lazy" alt="演员陈望舟在片场读剧本的侧脸示意">
+            <div class="rec-body">
+              <span class="rec-tag">演员 · 合约</span>
+              <h3>陈望舟的补充协议：一条时间戳的用处</h3>
+              <p>10月30日签的补充协议里写明“档期以剧组通知为准”，工作室据此否认换角。协议原件未公开，只有签署页截图流出。</p>
+              <div class="rec-meta"><span>工作室声明</span><span>11月6日 21:10</span></div>
+            </div>
+          </article>
+          <article class="rec-card">
+            <img src="https://picsum.photos/seed/madou-pick-03/560/300" width="560" height="300" loading="lazy" alt="竖屏剧场手机界面与解锁规则的示意图">
+            <div class="rec-body">
+              <span class="rec-tag">平台 · 规则</span>
+              <h3>前3集免费之后：解锁规则怎么算钱</h3>
+              <p>新规则按“集”计费而不是按“章”，一集通常2分半。20部新剧里已有7部把第4集设成0.9元，比旧版单集便宜0.3元。</p>
+              <div class="rec-meta"><span>竖屏剧场</span><span>11月4日 生效</span></div>
+            </div>
+          </article>
+          <article class="rec-card">
+            <img src="https://picsum.photos/seed/madou-pick-04/560/300" width="560" height="300" loading="lazy" alt="短剧合集片单封面拼贴示意">
+            <div class="rec-body">
+              <span class="rec-tag">合集 · 片单</span>
+              <h3>“雨夜+旧楼”七部短剧合集</h3>
+              <p>把《旧巷回声》《雨停之前》《七号天台》等七部同题材短剧按上线时间排列，标注了每部的免费集数与最高分集。适合一次补完。</p>
+              <div class="rec-meta"><span>编辑整理</span><span>11月7日 更新</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="block" id="latest">
+        <div class="block-head">
+          <h2>最新更新：排播、声明与规则改动</h2>
+          <span class="sub">按时间倒序</span>
+        </div>
+        <div class="tight-list">
+          <div class="tight-item">
+            <div class="t-date">11月7日 10:20</div>
+            <div class="t-body">
+              <h3>《七号天台》大结局改为两天连播<span class="t-type type-fact">公告</span></h3>
+              <p>发行方“南岸制作”在官号发布排播表，原定11月9日一次性放出的大结局拆成11月8日、9日各一集，理由是“剪辑版本调整”。</p>
+            </div>
+          </div>
+          <div class="tight-item">
+            <div class="t-date">11月6日 22:40</div>
+            <div class="t-body">
+              <h3>《旧巷回声》第9集提档至11月8日中午<span class="t-type type-fact">公告</span></h3>
+              <p>平台排播页与制作方同步更新。提档后原11月10日的会员抢先看取消，非会员与会员同日解锁。</p>
+            </div>
+          </div>
+          <div class="tight-item">
+            <div class="t-date">11月6日 21:10</div>
+            <div class="t-body">
+              <h3>陈望舟工作室回应换角<span class="t-type type-reply">回应</span></h3>
+              <p>声明共三段，核心是“未收到换角通知”并附10月30日协议签署时间戳。未提及是否参与后续补拍。</p>
+            </div>
+          </div>
+          <div class="tight-item">
+            <div class="t-date">11月5日 16:05</div>
+            <div class="t-body">
+              <h3>“换角”说法最早出现在10月28日的剧组群聊截图<span class="t-type type-rumor">待核</span></h3>
+              <p>截图无群名、无头像，仅有一段文字。制片方未确认其真实性，传播链条上已有三个账号删除原帖。</p>
+            </div>
+          </div>
+          <div class="tight-item">
+            <div class="t-date">11月4日 09:00</div>
+            <div class="t-body">
+              <h3>竖屏剧场新解锁规则生效<span class="t-type type-fact">规则</span></h3>
+              <p>前3集免费、单集解锁，已购旧规则用户可领取差价券。券的兑换入口在“我的—订单—旧单补偿”，12月5日截止。</p>
+            </div>
+          </div>
+          <div class="tight-item">
+            <div class="t-date">11月3日 14:30</div>
+            <div class="t-body">
+              <h3>《雨停之前》补拍结束<span class="t-type type-fact">进度</span></h3>
+              <p>导演在直播中提到补拍共用了4天，补的是第6集到第8集的雨戏，配乐重新录制，上线时间未变。</p>
+            </div>
+          </div>
+          <div class="tight-item">
+            <div class="t-date">11月2日 19:15</div>
+            <div class="t-body">
+              <h3>演员林知夏签约新公司<span class="t-type type-fact">合约</span></h3>
+              <p>新合约自11月1日起算，经纪约与商务约分开签，原公司保留两部已开机作品的分成权。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="block" id="channels">
+        <div class="block-head">
+          <h2>分类入口：按你要找的东西进</h2>
+        </div>
+        <div class="tag-index">
+          <a href="/#picks">短剧提档排播<span>12</span></a>
+          <a href="/#deep">演员合约与换角<span>9</span></a>
+          <a href="/#latest">竖屏剧场规则<span>7</span></a>
+          <a href="/#picks">雨夜题材片单<span>15</span></a>
+          <a href="/#talk">观众口碑与吐槽<span>21</span></a>
+          <a href="/#guide">付费解锁避坑<span>6</span></a>
+          <a href="/#deep">剧组补拍记录<span>8</span></a>
+          <a href="/#latest">平台分账周期<span>5</span></a>
+          <a href="/#faq">配音与字幕差异<span>4</span></a>
+          <a href="/#overview">casting 路透<span>11</span></a>
+          <a href="/#picks">大结局连播<span>10</span></a>
+          <a href="/#deep">工作室声明原文<span>3</span></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="block" id="deep">
+        <div class="block-head">
+          <h2>深度解析：换角传闻里哪些话能核对</h2>
+          <span class="sub">全页唯一主体阅读区</span>
+        </div>
+        <article class="article">
+          <p>判断一条“换角”消息靠不靠谱，先看它有没有落在可核对的材料上。陈望舟这件事，从10月28日到11月7日，公开可见的东西只有三样：一张群聊截图、一份工作室声明、一份排播表。三样东西能互相印证的部分，比想象中少。</p>
+
+          <h3>一、时间线：截图、协议、声明的先后</h3>
+          <p>群聊截图的日期显示为10月28日23:47，内容只有一句“后面几场换人拍”。10月30日，陈望舟与剧组签了补充协议，工作室在11月6日把签署页时间戳发了出来。11月6日22:40，《旧巷回声》第9集提档公告发布，演员表未改动，仍列陈望舟。三件事的先后顺序清楚，但截图与协议之间没有直接关联——协议可能只是档期调整，也可能正是为换角做的铺垫。仅凭时间先后，推不出因果。</p>
+
+          <h3>二、说法差异：同一件事的三种措辞</h3>
+          <table class="check-table">
+            <tbody>
+              <tr><th>工作室声明原文</th><td>“截至本声明发出，未收到任何换角通知。”</td></tr>
+              <tr><th>制片方公开表述</th><td>11月7日媒体问询时回复“以官方排播信息为准”，未正面回应换角。</td></tr>
+              <tr><th>传播中的转述</th><td>部分账号写成“工作室否认换角”，把“未收到通知”改成了“否认”。</td></tr>
+            </tbody>
+          </table>
+          <p>“未收到通知”与“否认换角”不是一回事。前者的主语是工作室的收件状态，后者的主语是事实本身。制片方那句“以排播信息为准”同样留了口子：排播表第9集确实还有陈望舟的名字，但第10集之后的演员表在11月7日仍显示“待更新”。</p>
+
+          <h3>三、可以怎么用这条规则判断</h3>
+          <p>短剧拍摄周期普遍在15到25天，补拍常常发生在杀青后两周内。如果换角属实，通常会出现两个信号：一是已发布剧集的演员表被批量修改，二是补拍通告单出现新演员名字。截至11月7日，第一个信号没有出现，第二个信号只在一条无法溯源的微博里被提到。这条判断可以被反驳的地方在于：演员表修改有滞后，制片方也可能选择在上线前一刻才更新。所以它只能作为“暂未证实”的处理依据，不能当作结论。</p>
+
+          <blockquote>可引用的判断：在排播表未改、补拍通告未公开、制片方未正面回应这三项同时成立时，把“换角”写成事实是不成立的；它可以写进“待核”栏，但不能进“已确认”栏。</blockquote>
+
+          <p>对照11月4日生效的竖屏剧场新规则，平台对剧集信息的更新有明确时限：上线前48小时需锁定演员表。按这个时限，《旧巷回声》第9集在11月8日中午上线，演员表应在11月6日中午前锁定。11月6日22:40的提档公告没有改动演员表，这至少说明在公告发布时，平台侧的演员信息仍是陈望舟。</p>
+
+          <h3>四、把判断拆成可核对的四项</h3>
+          <ol>
+            <li>排播表演员列：第9集为陈望舟，第10集起显示“待更新”，11月7日复核未变。</li>
+            <li>补拍通告：无公开来源，仅一条已删除微博提及，无法核对。</li>
+            <li>工作室声明：11月6日21:10发布，措辞为“未收到通知”，非“否认”。</li>
+            <li>制片方回应：11月7日媒体问询回复“以排播信息为准”，未确认也未否认。</li>
+          </ol>
+          <p>四项里，两项有公开来源，一项来源已消失，一项是模糊回应。这样的结构下，最稳的写法是“换角传闻未获证实，排播信息暂未变动”，而不是替任何一方下结论。</p>
+        </article>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="block" id="guide">
+        <div class="block-head">
+          <h2>体验指南：追一部短剧少花冤枉钱</h2>
+          <span class="sub">四步操作</span>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <h3>先看免费集数再决定买不买</h3>
+            <p>新规则下前3集免费。把第1到第3集看完，再判断第4集值不值0.9元。20部新剧里有7部第4集降价，其余仍是1.2元。</p>
+          </div>
+          <div class="step">
+            <h3>旧订单记得领差价券</h3>
+            <p>11月4日前按旧规则购买的剧集，可在“我的—订单—旧单补偿”领券，券到12月5日过期。券只能用于同剧场的新剧解锁。</p>
+          </div>
+          <div class="step">
+            <h3>先查演员表再下结论</h3>
+            <p>看到换角消息，先去排播页看演员列是否改动。第10集起的演员表显示“待更新”时，说明信息还没锁定，不必急着转述。</p>
+          </div>
+          <div class="step">
+            <h3>补拍剧优先等口碑</h3>
+            <p>《雨停之前》补拍了4天、配乐重录。补拍剧的前两集观感和成片质量常有落差，等上线24小时后的分集评分更可靠。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="block" id="faq">
+        <div class="block-head">
+          <h2>常见问答</h2>
+        </div>
+        <div>
+          <details class="faq-item">
+            <summary>短剧提档后，已买的会员抢先看会怎么处理？</summary>
+            <div class="faq-body"><p>《旧巷回声》第9集提档后，会员抢先看取消，会员与非会员同日解锁。此前为抢先看单独付费的用户，平台按新规则补发一张同剧场通用券，有效期30天，从11月8日算起。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>“未收到换角通知”算不算否认换角？</summary>
+            <div class="faq-body"><p>不算。这句话描述的是工作室的收件状态，不是事实本身。要构成否认，措辞通常会是“相关说法不实”或“未发生换角”。两者在传播中常被合并，读原文时要注意主语。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>竖屏剧场一集为什么只有两分半？</summary>
+            <div class="faq-body"><p>这类剧按“集”计费，单集时长多在2分到3分之间，节奏靠每集结尾的钩子维持。时长压缩后，单集0.9元到1.2元的定价才显得可接受。按分钟折算，单价其实高于长剧。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>补拍过的剧，上线版本会和预告片不一样吗？</summary>
+            <div class="faq-body"><p>会。《雨停之前》补的是第6到第8集的雨戏，预告片里这几个镜头用的是补拍前的素材，配乐也是旧版。正片上线后，片尾字幕的配乐名单会换人，可以据此核对。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>剧组分账周期改成双周结，和观众有关系吗？</summary>
+            <div class="faq-body"><p>间接有。结算变快后，制作方能更早拿到钱投入下一部，同档期排播会更密。11月6日后，拾光映画已把下一部剧的开机时间从12月初提前到11月下旬。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>哪里能看到工作室声明的原文？</summary>
+            <div class="faq-body"><p>声明发布在陈望舟工作室官号，11月6日21:10，正文三段加一张签署页截图。转发版本常省略第三段“后续以剧组通告为准”，这一段恰恰是留有余地的部分。</p></div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="block" id="talk">
+        <div class="block-head">
+          <h2>观众评论：有人买账，有人不买账</h2>
+          <span class="sub">来自站内讨论区</span>
+        </div>
+        <div class="comment-grid">
+          <div class="comment">
+            <div class="comment-head">
+              <span class="avatar">阿</span>
+              <b>阿屿看剧</b><span>11月7日</span><span class="mood">中立</span>
+            </div>
+            <span class="ref">《旧巷回声》第9集</span>
+            <p>提档到中午12点对我这种上班族不友好，午休只够看一集半。演员表没改这点我特意去翻了，第10集还是“待更新”，所以换角的事我先观望。</p>
+          </div>
+          <div class="comment">
+            <div class="comment-head">
+              <span class="avatar">灯</span>
+              <b>灯下翻页</b><span>11月7日</span><span class="mood">吐槽</span>
+            </div>
+            <span class="ref">竖屏剧场解锁规则</span>
+            <p>前3集免费听着大方，第4集0.9元、第5集又变1.2元，价目表翻来覆去。差价券入口藏得深，我在订单页点了三次才找到“旧单补偿”。</p>
+          </div>
+          <div class="comment">
+            <div class="comment-head">
+              <span class="avatar">周</span>
+              <b>周末补剧人</b><span>11月6日</span><span class="mood">支持</span>
+            </div>
+            <span class="ref">陈望舟工作室声明</span>
+            <p>声明里那句“未收到通知”确实容易被写成“否认”，我原本转的就是删减版。后来看了原文第三段，觉得工作室措辞挺克制，没必要替他们加戏。</p>
+          </div>
+          <div class="comment">
+            <div class="comment-head">
+              <span class="avatar">雨</span>
+              <b>雨天不带伞</b><span>11月6日</span><span class="mood">质疑</span>
+            </div>
+            <span class="ref">《雨停之前》补拍</span>
+            <p>补拍4天只补雨戏，配乐还重录，成本不小。我怀疑是为了过审改台词，不是单纯补镜头。预告片里第7集那段对话，正片要是删了就能对上。</p>
+          </div>
+          <div class="comment">
+            <div class="comment-head">
+              <span class="avatar">林</span>
+              <b>林间小卖部</b><span>11月5日</span><span class="mood">中性</span>
+            </div>
+            <span class="ref">“雨夜+旧楼”七部合集</span>
+            <p>七部里我看过四部，《七号天台》的雨戏其实拍得一般，胜在节奏。合集把免费集数标出来了，这点比很多片单实在，省得点进去才发现要付费。</p>
+          </div>
+          <div class="comment">
+            <div class="comment-head">
+              <span class="avatar">老</span>
+              <b>老K不追更</b><span>11月5日</span><span class="mood">吐槽</span>
+            </div>
+            <span class="ref">分账周期改动</span>
+            <p>双周结听着是好事，可上一部剧的尾款拖了六周才到账。新周期能不能执行，得看下个月拾光映画的结算单，现在夸太早。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="block" id="news">
+        <div class="block-head">
+          <h2>相关资讯</h2>
+        </div>
+        <div class="tight-list">
+          <div class="tight-item">
+            <div class="t-date">11月7日</div>
+            <div class="t-body">
+              <h3>林知夏新合约：经纪约与商务约分开签</h3>
+              <p>新合约11月1日起算，原公司保留两部已开机作品的分成权。分开签的做法在近两年新人里变多，主要为了商务报价更灵活。</p>
+            </div>
+          </div>
+          <div class="tight-item">
+            <div class="t-date">11月5日</div>
+            <div class="t-body">
+              <h3>《七号天台》大结局拆成两天连播</h3>
+              <p>发行方南岸制作称“剪辑版本调整”，原定11月9日一次性放出的大结局改为11月8日、9日各一集。</p>
+            </div>
+          </div>
+          <div class="tight-item">
+            <div class="t-date">11月3日</div>
+            <div class="t-body">
+              <h3>《雨停之前》补拍4天，配乐重录</h3>
+              <p>导演在直播中说明补的是第6到第8集的雨戏，上线时间未变，片尾配乐名单将换人。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="block" id="relate">
+        <div class="block-head">
+          <h2>相关推荐</h2>
+        </div>
+        <div class="tag-index">
+          <a href="/#picks">短剧提档排播表</a>
+          <a href="/#deep">演员合约补充协议</a>
+          <a href="/#guide">竖屏剧场付费避坑</a>
+          <a href="/#latest">工作室声明原文对照</a>
+          <a href="/#picks">雨夜旧楼题材合集</a>
+          <a href="/#talk">换角传闻讨论区</a>
+          <a href="/#latest">分账周期改动记录</a>
+          <a href="/#faq">补拍剧口碑观察</a>
+        </div>
+      </section>
+
+      <!-- 补充板块：信息可信度分层 -->
+      <section class="block" id="layers">
+        <div class="block-head">
+          <h2>信息可信度分层：一条消息该放哪一层</h2>
+        </div>
+        <div class="compare">
+          <div class="col-a">
+            <h3>已确认层</h3>
+            <ul>
+              <li>平台排播页与官号同步的提档、连播公告</li>
+              <li>工作室发布的书面声明与签署页时间戳</li>
+              <li>导演直播中自己说明的补拍天数与集数</li>
+              <li>竖屏剧场规则页写明的解锁价格与截止日</li>
+            </ul>
+          </div>
+          <div class="col-b">
+            <h3>待核层</h3>
+            <ul>
+              <li>无群名、无头像的群聊截图</li>
+              <li>已删除、无法回溯的微博转述</li>
+              <li>“以排播信息为准”这类不正面回应</li>
+              <li>预告片与正片片尾名单的差异（需上线后核对）</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="side-col" aria-label="侧栏">
+      <div class="side-box">
+        <h3>栏目导航</h3>
+        <nav class="side-nav" id="sideNav" aria-label="侧栏导航">
+          <a href="/#overview">领域概览</a>
+          <a href="/#picks">精选推荐</a>
+          <a href="/#latest">最新更新</a>
+          <a href="/#channels">分类入口</a>
+          <a href="/#deep">深度解析</a>
+          <a href="/#guide">体验指南</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#talk">观众评论</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#relate">相关推荐</a>
+          <a href="/#layers">可信度分层</a>
+        </nav>
+      </div>
+      <div class="side-box">
+        <h3>本周热看榜</h3>
+        <ol class="rank-list">
+          <li><a href="/#picks">《旧巷回声》第9集提档</a></li>
+          <li><a href="/#deep">陈望舟工作室声明原文</a></li>
+          <li><a href="/#guide">竖屏剧场前3集免费规则</a></li>
+          <li><a href="/#picks">“雨夜+旧楼”七部合集</a></li>
+          <li><a href="/#news">《七号天台》结局连播</a></li>
+        </ol>
+      </div>
+      <div class="side-box">
+        <h3>相关推荐标签</h3>
+        <div class="pick-tags">
+          <a href="/#latest">短剧提档</a>
+          <a href="/#deep">换角传闻</a>
+          <a href="/#guide">付费解锁</a>
+          <a href="/#news">补拍记录</a>
+          <a href="/#faq">差价券</a>
+          <a href="/#talk">观众吐槽</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <rect width="40" height="40" rx="10" fill="#2f4a5c"/>
+            <path d="M10 27c2.4-9 6.4-13 13-13 4 0 5.6 2.6 5.6 5.2 0 5-5.2 9-11.6 9-2.6 0-5.2-.6-7-1.2z" fill="#f2b544"/>
+            <circle cx="14.5" cy="13" r="2.6" fill="#e2574c"/>
+          </svg>
+          <b>麻豆吃瓜不打烊早知道</b>
+        </div>
+        <p>把排播公告、合约回应与讨论转述分开摆放，<br>每条消息标明来源与日期，能核对的才写进事实。</p>
+      </div>
+      <div>
+        <h4>频道</h4>
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#picks">精选推荐</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#channels">分类入口</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>阅读</h4>
+        <ul>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#layers">可信度分层</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>互动</h4>
+        <ul>
+          <li><a href="/#talk">观众评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#relate">相关推荐</a></li>
+          <li><a href="/#top">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">
+      <span>示例数据说明：片名、人物、日期与数字为演示用示例条目，非真实影视资料。更新时间 2026年11月8日，对应正文“最新更新”与“信息可信度分层”两栏。</span>
+      <span>© 2026 麻豆吃瓜不打烊早知道 · 保留所有权利</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn = document.getElementById('menuBtn');
+  var navMain = document.getElementById('navMain');
+  if(menuBtn && navMain){
+    menuBtn.addEventListener('click', function(){
+      var open = navMain.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navMain.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 760){
+        navMain.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 480){ toTop.classList.add('on'); }
+    else { toTop.classList.remove('on'); }
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 侧栏滚动高亮
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var sections = sideLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+  function highlight(){
+    var pos = window.scrollY + 170;
+    var current = null;
+    sections.forEach(function(sec){
+      if(sec.offsetTop <= pos){ current = sec.id; }
+    });
+    sideLinks.forEach(function(a){
+      if(a.getAttribute('href') === '/#' + current){ a.classList.add('on'); }
+      else { a.classList.remove('on'); }
+    });
+  }
+  window.addEventListener('scroll', highlight, {passive:true});
+  highlight();
+
+  // 本地搜索
+  var input = document.getElementById('searchInput');
+  var result = document.getElementById('searchResult');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.main-col h3, .main-col summary, .side-box a, .footer a'));
+  var data = [];
+  items.forEach(function(el){
+    var text = (el.textContent || '').trim();
+    if(text.length < 3) return;
+    var target = el.closest('a');
+    if(!target){
+      target = el.closest('details') ? el : el.closest('[id]');
+    }
+    var href = target && target.tagName === 'A' ? target.getAttribute('href') : null;
+    if(!href){
+      var block = el.closest('section[id], .side-box');
+      if(block && block.id){ href = '/#' + block.id; }
+      else if(block){ href = '/#top'; }
+    }
+    if(href && href !== '/#top'){
+      data.push({text:text, href:href});
+    }
+  });
+  // 去重
+  var seen = {};
+  data = data.filter(function(d){
+    var key = d.href + '|' + d.text;
+    if(seen[key]) return false;
+    seen[key] = true;
+    return true;
+  });
+
+  if(input){
+    input.addEventListener('input', function(){
+      var q = input.value.trim();
+      if(!q){
+        result.classList.remove('on');
+        result.innerHTML = '';
+        return;
+      }
+      var hits = data.filter(function(d){
+        return d.text.indexOf(q) !== -1;
+      }).slice(0,8);
+      result.classList.add('on');
+      if(hits.length === 0){
+        result.innerHTML = '<div class="empty">没有找到与“' + q.replace(/</g,'&lt;') + '”相关的条目，试试片名、演员名或“提档”“解锁”等词。</div>';
+      } else {
+        result.innerHTML = hits.map(function(d){
+          return '<a href="' + d.href + '">' + d.text.replace(/</g,'&lt;') + '</a>';
+        }).join('');
+      }
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('.search-box')){
+        result.classList.remove('on');
+      }
+    });
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        result.classList.remove('on');
+        input.blur();
+      }
+    });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"麻豆吃瓜不打烊早知道",
+  "description":"梳理短剧排播、演员合约、平台规则与观众讨论的信息分层站，提供片单、时间线与可核对的说法差异。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"短剧提档后，已买的会员抢先看会怎么处理？",
+      "acceptedAnswer":{"@type":"Answer","text":"《旧巷回声》第9集提档后会员抢先看取消，会员与非会员同日解锁，此前单独付费的用户补发一张同剧场通用券，有效期30天。"}
+    },
+    {
+      "@type":"Question",
+      "name":"“未收到换角通知”算不算否认换角？",
+      "acceptedAnswer":{"@type":"Answer","text":"不算。这句话描述的是工作室的收件状态，不是事实本身。否认换角的常见措辞是“相关说法不实”。"}
+    },
+    {
+      "@type":"Question",
+      "name":"竖屏剧场一集为什么只有两分半？",
+      "acceptedAnswer":{"@type":"Answer","text":"这类剧按集计费，单集多在2到3分钟，靠结尾钩子维持节奏，压缩时长后0.9元到1.2元的定价才可接受。"}
+    },
+    {
+      "@type":"Question",
+      "name":"补拍过的剧，上线版本会和预告片不一样吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"会。《雨停之前》补的是第6到第8集雨戏，预告片用的是补拍前素材与旧版配乐，正片片尾配乐名单会换人。"}
+    },
+    {
+      "@type":"Question",
+      "name":"剧组分账周期改成双周结，和观众有关系吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"间接有关。结算变快后制作方能更早投入下一部，同档期排播更密，拾光映画已把下一部剧开机提前到11月下旬。"}
+    },
+    {
+      "@type":"Question",
+      "name":"哪里能看到工作室声明的原文？",
+      "acceptedAnswer":{"@type":"Answer","text":"声明发布在陈望舟工作室官号，11月6日21:10，正文三段加签署页截图，转发版常省略第三段“后续以剧组通告为准”。"}
+    }
+  ]
+}
+</script>
+</body>
+            </html>
