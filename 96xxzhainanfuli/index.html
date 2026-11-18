@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>96xx宅男福利社-宅家娱乐资源与体验指南</title>
+<meta name="description" content="96xx宅男福利社是面向宅家休闲人群的娱乐资源指南站，整理动画片单、单机游戏、桌搭装备、番剧时间表与实用工具，给出可核对的体验建议和避坑清单，帮助你把有限的休息时间花在真正值得的内容上。">
+<meta name="keywords" content="96xx宅男福利社">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23222b3a'/%3E%3Ccircle cx='32' cy='27' r='13' fill='%2367e8f9'/%3E%3Crect x='15' y='40' width='34' height='9' rx='4.5' fill='%23f5b83d'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f6f4ef;
+  --panel:#ffffff;
+  --ink:#1f2430;
+  --ink-soft:#4d5666;
+  --ink-mute:#7b8496;
+  --line:#e2ded4;
+  --brand:#222b3a;
+  --brand-2:#3b6ea8;
+  --accent:#e2571e;
+  --accent-soft:#fdece2;
+  --cyan:#0f8fa8;
+  --gold:#b8801a;
+  --gold-soft:#fbf1da;
+  --ok:#2f7d52;
+  --radius:14px;
+  --radius-s:8px;
+  --shadow:0 1px 2px rgba(31,36,48,.05),0 8px 24px rgba(31,36,48,.06);
+  --shadow-s:0 1px 3px rgba(31,36,48,.08);
+  --fs-h1:clamp(1.75rem,4vw,2.5rem);
+  --fs-h2:1.32rem;
+  --fs-h3:1.06rem;
+  --sp:clamp(14px,2.2vw,22px);
+  --maxw:1180px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:118px}
+body{
+  margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);
+  line-height:1.78;font-size:16px;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:2px;border-radius:4px}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:700}
+p{margin:0 0 .85em}
+ul,ol{margin:0 0 .9em;padding-left:1.25em}
+li{margin-bottom:.35em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--sp)}
+
+/* ---------- 公告条 + 页头 吸顶 ---------- */
+.sticky-top{position:sticky;top:0;z-index:60}
+.announce{
+  background:linear-gradient(90deg,#222b3a,#33445e 60%,#3b6ea8);
+  color:#eef3fa;font-size:.86rem;
+}
+.announce .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:7px var(--sp)}
+.announce .tag{
+  background:var(--accent);color:#fff;font-weight:700;font-size:.76rem;
+  padding:1px 8px;border-radius:20px;letter-spacing:.04em;white-space:nowrap;
+}
+.announce a{color:#ffe9b0}
+.announce .ann-date{color:#b9c8db;white-space:nowrap}
+.site-head{
+  background:rgba(255,255,255,.96);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);box-shadow:var(--shadow-s);
+}
+.head-in{display:flex;align-items:center;gap:14px;padding:10px var(--sp);max-width:var(--maxw);margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex:0 0 auto}
+.brand:hover{text-decoration:none}
+.brand svg{width:38px;height:38px;flex:0 0 auto}
+.brand-txt{display:flex;flex-direction:column;line-height:1.15}
+.brand-txt strong{font-size:1.06rem;letter-spacing:.02em}
+.brand-txt span{font-size:.7rem;color:var(--ink-mute);letter-spacing:.14em}
+.main-nav{flex:1 1 auto}
+.main-nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.main-nav a{
+  display:block;padding:6px 10px;border-radius:20px;color:var(--ink-soft);
+  font-size:.9rem;text-decoration:none;white-space:nowrap;
+}
+.main-nav a:hover{background:#eef1f6;color:var(--brand);text-decoration:none}
+.main-nav a[aria-current="true"]{background:var(--brand);color:#fff}
+.head-tools{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.search{display:flex;align-items:center;border:1px solid var(--line);border-radius:20px;background:#fbfaf7;overflow:hidden}
+.search input{
+  border:0;background:transparent;padding:7px 10px 7px 12px;font:inherit;font-size:.86rem;
+  width:150px;color:var(--ink);outline:none;
+}
+.search button{
+  border:0;background:var(--brand);color:#fff;padding:7px 12px;font:inherit;font-size:.84rem;cursor:pointer;
+}
+.search button:hover{background:var(--brand-2)}
+.menu-btn{
+  display:none;border:1px solid var(--line);background:#fff;border-radius:10px;
+  padding:7px 10px;font:inherit;font-size:.86rem;cursor:pointer;color:var(--brand);
+  align-items:center;gap:6px;
+}
+.menu-btn svg{width:16px;height:16px}
+.search-feedback{
+  font-size:.8rem;color:var(--accent);flex-basis:100%;padding:0 0 4px;
+}
+.search-feedback:empty{display:none}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1100px 420px at 82% -10%,rgba(103,232,249,.18),transparent 60%),
+    radial-gradient(700px 380px at 8% 110%,rgba(245,184,61,.16),transparent 62%),
+    linear-gradient(160deg,#1c2433,#2b3a52 58%,#33445e);
+  color:#eaf1fa;
+}
+.hero-in{
+  max-width:var(--maxw);margin:0 auto;padding:clamp(30px,5vw,58px) var(--sp);
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(20px,4vw,46px);align-items:center;
+}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.16em;
+  color:#9fd8e4;border:1px solid rgba(159,216,228,.35);padding:3px 12px;border-radius:20px;margin-bottom:16px;
+}
+.hero h1{font-size:var(--fs-h1);letter-spacing:.02em;color:#fff;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:#f5b83d}
+.hero-lead{font-size:1.02rem;color:#c4d2e4;max-width:34em;margin-bottom:20px}
+.hero-lead b{color:#fff;font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.btn{
+  display:inline-block;padding:10px 20px;border-radius:24px;font-size:.92rem;font-weight:600;
+  text-decoration:none;transition:transform .16s ease,background .16s ease;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#c8480f;text-decoration:none;transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(196,210,228,.45);color:#dbe6f4}
+.btn-ghost:hover{background:rgba(255,255,255,.08);text-decoration:none;transform:translateY(-2px)}
+.hero-stats{display:flex;flex-wrap:wrap;gap:10px 26px;list-style:none;padding:0;margin:0}
+.hero-stats li{font-size:.82rem;color:#9fb2c9}
+.hero-stats b{display:block;font-size:1.28rem;color:#fff;font-weight:700;letter-spacing:.01em}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+
+/* ---------- 通用板块 ---------- */
+.section{padding:clamp(26px,4vw,46px) 0}
+.sec-head{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:clamp(14px,2.2vw,22px)}
+.sec-head h2{font-size:var(--fs-h2);letter-spacing:.01em}
+.sec-head h2 span{color:var(--accent)}
+.sec-head .sub{font-size:.86rem;color:var(--ink-mute);margin-left:auto}
+.sec-head p{margin:0;flex-basis:100%;color:var(--ink-soft);font-size:.92rem;max-width:62em}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow-s);
+}
+.pad{padding:clamp(14px,2vw,20px)}
+
+/* 概览 */
+.overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ov-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 12px;box-shadow:var(--shadow-s)}
+.ov-card h3{font-size:.98rem;margin-bottom:6px;color:var(--brand)}
+.ov-card .num{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:1.5rem;font-weight:700;color:var(--accent);line-height:1.1}
+.ov-card p{font-size:.86rem;color:var(--ink-soft);margin:.4em 0 0}
+.ov-card .meta{font-size:.76rem;color:var(--ink-mute);margin-top:6px}
+
+/* 精选卡片网格 */
+.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.f-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;box-shadow:var(--shadow-s);
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.f-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.f-card img{width:100%;height:150px;object-fit:cover}
+.f-card .body{padding:13px 15px 15px;display:flex;flex-direction:column;gap:6px;flex:1}
+.f-card h3{font-size:1rem;line-height:1.45}
+.f-card p{font-size:.85rem;color:var(--ink-soft);margin:0}
+.f-card .foot{margin-top:auto;display:flex;align-items:center;gap:8px;font-size:.76rem;color:var(--ink-mute);flex-wrap:wrap}
+.chip{
+  display:inline-block;background:#eef1f6;color:var(--brand-2);font-size:.73rem;
+  padding:1px 9px;border-radius:20px;white-space:nowrap;
+}
+.chip.accent{background:var(--accent-soft);color:var(--accent)}
+.chip.gold{background:var(--gold-soft);color:var(--gold)}
+.chip.ok{background:#e6f3ec;color:var(--ok)}
+
+/* 最新更新 紧凑列表 */
+.updates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px}
+.u-item{display:flex;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.u-item time{flex:0 0 78px;font-size:.78rem;color:var(--ink-mute);font-family:ui-monospace,Menlo,monospace}
+.u-item .t{font-size:.93rem;color:var(--ink)}
+.u-item .t b{font-weight:600}
+.u-item .t small{display:block;color:var(--ink-mute);font-size:.78rem}
+
+/* 分类入口 标签索引 */
+.cat-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cat-link{
+  display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid var(--line);
+  border-radius:var(--radius-s);background:var(--panel);text-decoration:none;color:var(--ink);
+  transition:border-color .15s ease,transform .15s ease;
+}
+.cat-link:hover{border-color:var(--cyan);transform:translateY(-2px);text-decoration:none}
+.cat-link b{font-size:.93rem}
+.cat-link span{font-size:.76rem;color:var(--ink-mute)}
+
+/* 深度解析 */
+.deep{display:grid;grid-template-columns:minmax(0,1fr) 268px;gap:26px;align-items:start}
+.deep-main p{font-size:.97rem;color:#2a3140}
+.deep-main h3{font-size:var(--fs-h3);margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--accent)}
+.deep-main h3:first-child{margin-top:0}
+.quote{
+  border-left:4px solid var(--cyan);background:#f0f8fa;padding:12px 16px;border-radius:0 var(--radius-s) var(--radius-s) 0;
+  font-size:.92rem;color:#1c4550;margin:16px 0;
+}
+.quote b{color:var(--cyan)}
+.compare{width:100%;border-collapse:collapse;font-size:.86rem;margin:12px 0 6px;background:var(--panel)}
+.compare caption{text-align:left;font-size:.8rem;color:var(--ink-mute);padding-bottom:6px}
+.compare th,.compare td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.compare th{background:#f1f4f8;font-weight:600;color:var(--brand)}
+.compare td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.deep-side{position:sticky;top:128px;display:flex;flex-direction:column;gap:14px}
+.side-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow-s)}
+.side-box h4{font-size:.9rem;margin-bottom:8px;color:var(--brand);letter-spacing:.02em}
+.side-box ol,.side-box ul{margin:0;padding-left:1.15em;font-size:.84rem;color:var(--ink-soft)}
+.side-box li{margin-bottom:.45em}
+.side-box .mini-note{font-size:.76rem;color:var(--ink-mute);margin-top:6px}
+
+/* 体验指南 编号步骤 */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.step{
+  position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px 14px 58px;box-shadow:var(--shadow-s);
+}
+.step::before{
+  counter-increment:s;content:counter(s,decimal-leading-zero);
+  position:absolute;left:16px;top:15px;font-family:ui-monospace,Menlo,monospace;
+  font-size:1.02rem;font-weight:700;color:#fff;background:var(--brand-2);
+  width:28px;height:28px;border-radius:8px;display:grid;place-items:center;
+}
+.step h3{font-size:.96rem;margin-bottom:5px}
+.step p{font-size:.86rem;color:var(--ink-soft);margin:0}
+.step .tip{display:block;font-size:.78rem;color:var(--gold);margin-top:6px}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq details{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-s);
+  padding:0;overflow:hidden;
+}
+.faq summary{
+  cursor:pointer;list-style:none;padding:13px 44px 13px 16px;font-weight:600;font-size:.94rem;
+  position:relative;color:var(--brand);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  font-size:1.15rem;color:var(--ink-mute);font-weight:400;
+}
+.faq details[open] summary::after{content:"–";color:var(--accent)}
+.faq details[open] summary{border-bottom:1px dashed var(--line)}
+.faq .ans{padding:12px 16px 14px;font-size:.9rem;color:var(--ink-soft)}
+.faq .ans p:last-child{margin-bottom:0}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.cmt{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow-s)}
+.cmt .who{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:.8rem;color:var(--ink-mute)}
+.avatar{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:.72rem;font-weight:700;color:#fff;flex:0 0 auto}
+.cmt .who b{color:var(--ink);font-size:.85rem;font-weight:600}
+.cmt .score{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--gold);font-weight:700;font-size:.8rem}
+.cmt p{font-size:.88rem;color:var(--ink-soft);margin:0}
+.cmt .to{font-size:.78rem;color:var(--brand-2);margin-top:6px;display:block}
+
+/* 相关资讯 */
+.news{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px}
+.news article{padding:12px 0;border-bottom:1px dashed var(--line)}
+.news h3{font-size:.95rem;margin-bottom:3px;font-weight:600}
+.news p{font-size:.83rem;color:var(--ink-soft);margin:0}
+.news .src{font-size:.75rem;color:var(--ink-mute);display:block;margin-top:4px}
+
+/* 推荐标签 */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:9px}
+.tag-cloud a{
+  font-size:.85rem;padding:6px 14px;border-radius:22px;background:var(--panel);
+  border:1px solid var(--line);color:var(--ink-soft);text-decoration:none;
+  transition:border-color .15s,color .15s;
+}
+.tag-cloud a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+/* 榜单时间线 补充板块 */
+.rank{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:18px}
+.rank-list{list-style:none;margin:0;padding:0;counter-reset:r}
+.rank-list li{
+  counter-increment:r;display:flex;gap:12px;align-items:flex-start;padding:10px 0;
+  border-bottom:1px dashed var(--line);font-size:.9rem;
+}
+.rank-list li:last-child{border-bottom:0}
+.rank-list li::before{
+  content:counter(r);flex:0 0 24px;height:24px;border-radius:6px;background:#eef1f6;
+  color:var(--brand);font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:.8rem;
+  display:grid;place-items:center;
+}
+.rank-list li:nth-child(-n+3)::before{background:var(--gold-soft);color:var(--gold)}
+.rank-list b{font-weight:600}
+.rank-list small{display:block;color:var(--ink-mute);font-size:.77rem}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 14px 22px;font-size:.87rem}
+.timeline li::before{
+  content:"";position:absolute;left:0;top:6px;width:12px;height:12px;border-radius:50%;
+  background:#fff;border:2px solid var(--brand-2);
+}
+.timeline li b{display:block;font-size:.9rem}
+.timeline time{font-size:.74rem;color:var(--ink-mute);font-family:ui-monospace,Menlo,monospace}
+
+/* 交互栏 投票 */
+.vote{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.vote-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.vote-box h3{font-size:.95rem;margin-bottom:10px}
+.vote-opt{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;
+  border:1px solid var(--line);background:#fbfaf7;border-radius:var(--radius-s);
+  padding:9px 13px;font:inherit;font-size:.88rem;color:var(--ink);cursor:pointer;margin-bottom:8px;text-align:left;
+}
+.vote-opt:hover{border-color:var(--cyan)}
+.vote-opt[aria-pressed="true"]{background:#e6f3ec;border-color:var(--ok);color:var(--ok);font-weight:600}
+.vote-opt .bar{font-variant-numeric:tabular-nums;font-size:.78rem;color:var(--ink-mute)}
+.vote-opt[aria-pressed="true"] .bar{color:var(--ok)}
+.vote-note{font-size:.76rem;color:var(--ink-mute);margin:4px 0 0}
+
+/* 页脚 */
+.site-foot{background:#1b2230;color:#aeb9c9;margin-top:clamp(24px,4vw,44px);font-size:.86rem}
+.foot-in{max-width:var(--maxw);margin:0 auto;padding:clamp(26px,4vw,42px) var(--sp) 20px}
+.foot-top{display:grid;grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(0,.9fr));gap:22px;padding-bottom:22px;border-bottom:1px solid #2c3647}
+.foot-brand .brand{color:#fff;margin-bottom:8px}
+.foot-brand .brand-txt span{color:#7f8da0}
+.foot-brand p{color:#8e9bad;font-size:.83rem;max-width:24em}
+.foot-col h4{color:#fff;font-size:.85rem;margin-bottom:8px;letter-spacing:.04em}
+.foot-col ul{list-style:none;margin:0;padding:0}
+.foot-col li{margin-bottom:.4em}
+.foot-col a{color:#a7b4c6;text-decoration:none}
+.foot-col a:hover{color:#fff;text-decoration:none}
+.foot-bottom{padding-top:16px;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.78rem;color:#78869a}
+.foot-bottom .upd{color:#9fb0c6}
+
+/* 返回顶部 */
+#toTop{
+  position:fixed;right:16px;bottom:18px;z-index:70;border:0;border-radius:50%;
+  width:44px;height:44px;background:var(--brand);color:#fff;cursor:pointer;
+  box-shadow:var(--shadow);display:none;place-items:center;
+}
+#toTop.show{display:grid}
+#toTop:hover{background:var(--brand-2)}
+
+/* 响应式 */
+@media (max-width:1024px){
+  .overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cat-index{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .deep{grid-template-columns:minmax(0,1fr)}
+  .deep-side{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-in{grid-template-columns:minmax(0,1fr)}
+  .hero-art{max-width:420px;margin:0 auto}
+  .foot-top{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+@media (max-width:760px){
+  html{scroll-padding-top:96px}
+  .head-in{gap:8px}
+  .main-nav{flex-basis:100%;order:5;display:none}
+  .main-nav.open{display:block}
+  .main-nav ul{flex-direction:column;gap:2px;padding-bottom:8px}
+  .main-nav a{border-radius:8px;padding:9px 12px}
+  .menu-btn{display:inline-flex}
+  .search input{width:104px}
+  .overview-grid,.feature-grid,.steps,.comments,.news,.updates,.vote{grid-template-columns:minmax(0,1fr)}
+  .cat-index{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .deep-side{grid-template-columns:minmax(0,1fr)}
+  .rank{grid-template-columns:minmax(0,1fr)}
+  .foot-top{grid-template-columns:minmax(0,1fr)}
+  .hero-stats{gap:8px 18px}
+  .compare{display:block;overflow-x:auto;white-space:nowrap}
+}
+@media (max-width:380px){
+  .cat-index{grid-template-columns:minmax(0,1fr)}
+  .search input{width:82px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .f-card:hover,.cat-link:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶：公告条 + 页头 -->
+<div class="sticky-top">
+  <div class="announce" role="region" aria-label="站点公告">
+    <div class="wrap">
+      <span class="tag">更新</span>
+      <span>96xx宅男福利社 11 月片单与游戏清单已换季：新增《赛博朋克：边缘行者》二刷笔记、《黑神话：悟空》二周目配装表，桌搭专题补了 3 套千元内方案。</span>
+      <span class="ann-date">2026-11-08 09:20</span>
+    </div>
+  </div>
+  <header class="site-head">
+    <div class="head-in">
+      <a class="brand" href="/#top" aria-label="96xx宅男福利社 首页">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect width="64" height="64" rx="14" fill="#222b3a"/>
+          <circle cx="32" cy="26" r="12.5" fill="#67e8f9"/>
+          <circle cx="27.5" cy="24" r="2.2" fill="#222b3a"/>
+          <circle cx="36.5" cy="24" r="2.2" fill="#222b3a"/>
+          <path d="M26 31.5c2.2 2.4 9.8 2.4 12 0" stroke="#222b3a" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <rect x="15" y="41" width="34" height="9" rx="4.5" fill="#f5b83d"/>
+          <rect x="24" y="44" width="16" height="3" rx="1.5" fill="#222b3a"/>
+        </svg>
+        <span class="brand-txt"><strong>96xx宅男福利社</strong><span>宅家娱乐指南</span></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#picks">精选片单</a></li>
+          <li><a href="/#updates">本周更新</a></li>
+          <li><a href="/#cats">分类入口</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#board">榜单</a></li>
+        </ul>
+      </nav>
+      <div class="head-tools">
+        <form class="search" id="searchForm" role="search" aria-label="站内查找">
+          <input type="search" id="searchInput" placeholder="找片单 / 游戏 / 桌搭" aria-label="输入关键词查找内容">
+          <button type="submit">查找</button>
+        </form>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav" type="button">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          菜单
+        </button>
+      </div>
+      <p class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></p>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-in">
+      <div>
+        <span class="kicker">宅家 · 片单 · 游戏 · 桌搭</span>
+        <h1 id="heroTitle">96xx宅男福利社</h1>
+        <p class="hero-lead">把周末交给能看完的东西。<b>动画片单、单机游戏、桌搭装备、番剧时间表</b>按周整理，标出时长、平台、汉化状态与踩坑点，避免点开就弃。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#picks">看本期片单</a>
+          <a class="btn btn-ghost" href="/#deep">读深度解析</a>
+        </div>
+        <ul class="hero-stats">
+          <li><b>11月</b>换季片单 42 条</li>
+          <li><b>28 部</b>单机游戏入库</li>
+          <li><b>3 套</b>千元内桌搭方案</li>
+          <li><b>9 个</b>分类频道</li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 340" role="presentation" focusable="false">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#67e8f9" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#3b6ea8" stop-opacity=".55"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#f5b83d"/>
+              <stop offset="1" stop-color="#e2571e"/>
+            </linearGradient>
+          </defs>
+          <rect x="30" y="26" width="360" height="230" rx="16" fill="#111826" stroke="#3d4d66" stroke-width="2"/>
+          <rect x="46" y="42" width="328" height="198" rx="9" fill="url(#g1)" opacity=".22"/>
+          <path d="M70 200c26-52 50-20 70-58s44-8 66-34 44-2 66-40" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="206" cy="108" r="38" fill="none" stroke="#67e8f9" stroke-width="3" opacity=".8"/>
+          <circle cx="206" cy="108" r="22" fill="none" stroke="#f5b83d" stroke-width="3" opacity=".9"/>
+          <circle cx="206" cy="108" r="6" fill="#f5b83d"/>
+          <rect x="70" y="64" width="66" height="8" rx="4" fill="#67e8f9" opacity=".7"/>
+          <rect x="70" y="80" width="42" height="8" rx="4" fill="#aebfd6" opacity=".45"/>
+          <rect x="284" y="64" width="58" height="8" rx="4" fill="#aebfd6" opacity=".45"/>
+          <rect x="150" y="256" width="120" height="12" rx="6" fill="#3d4d66"/>
+          <rect x="112" y="268" width="196" height="9" rx="4.5" fill="#2b3a52"/>
+          <rect x="58" y="292" width="76" height="9" rx="4.5" fill="#67e8f9" opacity=".45"/>
+          <rect x="146" y="292" width="46" height="9" rx="4.5" fill="#aebfd6" opacity=".35"/>
+          <rect x="204" y="292" width="60" height="9" rx="4.5" fill="#f5b83d" opacity=".45"/>
+          <circle cx="342" cy="292" r="6" fill="#e2571e"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <!-- 1 领域概览 -->
+    <section class="section" id="overview" aria-labelledby="h-overview">
+      <div class="sec-head">
+        <h2 id="h-overview">领域概览 <span>宅家娱乐的四个基本盘</span></h2>
+        <span class="sub">数据口径：2026-10-10 至 2026-11-08</span>
+        <p>宅家娱乐的消耗结构很稳定：看什么、玩什么、怎么坐得舒服、信息从哪来。四块时间分配彼此挤占，所以清单要合在一起排。</p>
+      </div>
+      <div class="overview-grid">
+        <div class="ov-card">
+          <div class="num">42</div>
+          <h3>动画与剧集条目</h3>
+          <p>11 月换季片单覆盖 1 月、4 月、7 月三批新番，标注总集数与单集时长，便于按周末切块。</p>
+          <div class="meta">来源：各平台番剧页 + 官方放送表</div>
+        </div>
+        <div class="ov-card">
+          <div class="num">28</div>
+          <h3>单机游戏入库</h3>
+          <p>含 6 款 2026 年秋季独立游戏，标注通关时长、是否支持手柄、有无中文本地化。</p>
+          <div class="meta">来源：Steam 商店页 / 官方补丁说明</div>
+        </div>
+        <div class="ov-card">
+          <div class="num">3</div>
+          <h3>桌搭方案</h3>
+          <p>千元内三套：宿舍折叠款、出租屋窄桌款、双屏办公款，单列每件预算与替换顺序。</p>
+          <div class="meta">来源：京东、淘宝 11 月到手价</div>
+        </div>
+        <div class="ov-card">
+          <div class="num">9</div>
+          <h3>分类频道</h3>
+          <p>动画、单机、桌搭、掌机、番剧时间表、汉化补丁、资源检索、工具、二手避坑。</p>
+          <div class="meta">频道页与首页共用同一套标签</div>
+        </div>
+        <div class="ov-card">
+          <div class="num">2</div>
+          <h3>互动栏目</h3>
+          <p>周末片单投票与桌搭预算互助，每期只留两个问题，避免投票变摆设。</p>
+          <div class="meta">本周投票截止 2026-11-10 23:00</div>
+        </div>
+        <div class="ov-card">
+          <div class="num">1</div>
+          <h3>每周固定复盘</h3>
+          <p>周日更新一次弃番率与烂尾名单，附弃看时间点，通常是第 3 集或第 7 集。</p>
+          <div class="meta">上周复盘：11 月 2 日</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="section" id="picks" aria-labelledby="h-picks">
+      <div class="sec-head">
+        <h2 id="h-picks">精选内容推荐 <span>本周六条</span></h2>
+        <span class="sub">按“能不能一个周末看完”排序</span>
+      </div>
+      <div class="feature-grid">
+        <article class="f-card">
+          <img src="https://picsum.photos/seed/96xx-anime-cyber/640/360" width="640" height="360" loading="lazy" alt="赛博朋克风格城市夜景插画，用于《赛博朋克：边缘行者》二刷笔记配图">
+          <div class="body">
+            <span class="chip accent">动画</span>
+            <h3>《赛博朋克：边缘行者》二刷笔记</h3>
+            <p>10 集、单集约 24 分钟，一个周末能刷完。二刷重点看第 6 集蒙太奇与配乐切换点，剧情密度比首刷感受高。</p>
+            <div class="foot"><span>约 4 小时</span><span>·</span><span>Netflix</span><span>·</span><span>11-06</span></div>
+          </div>
+        </article>
+        <article class="f-card">
+          <img src="https://picsum.photos/seed/96xx-game-wukong/640/360" width="640" height="360" loading="lazy" alt="中式山水与棍棒剪影，用于《黑神话：悟空》二周目配装表配图">
+          <div class="body">
+            <span class="chip">单机</span>
+            <h3>《黑神话：悟空》二周目配装表</h3>
+            <p>二周目保留根器与披挂，推荐“金身套 + 定身法”清图流，打黄眉阶段省 6 到 8 分钟，附赐福加点顺序。</p>
+            <div class="foot"><span>约 20 小时</span><span>·</span><span>PC / PS5</span><span>·</span><span>11-04</span></div>
+          </div>
+        </article>
+        <article class="f-card">
+          <img src="https://picsum.photos/seed/96xx-desk-setup/640/360" width="640" height="360" loading="lazy" alt="窄桌双屏桌面布置俯拍图，用于出租屋窄桌桌搭方案配图">
+          <div class="body">
+            <span class="chip gold">桌搭</span>
+            <h3>出租屋 1.2 米窄桌桌搭方案</h3>
+            <p>预算 986 元：显示器支架 159 元、桌下抽屉 89 元、理线槽 39 元，剩下给灯和椅。重点解决纵向空间不足。</p>
+            <div class="foot"><span>到手价</span><span>·</span><span>7 件</span><span>·</span><span>11-03</span></div>
+          </div>
+        </article>
+        <article class="f-card">
+          <img src="https://picsum.photos/seed/96xx-handheld-retro/640/360" width="640" height="360" loading="lazy" alt="掌机屏幕与像素风游戏画面特写，用于掌机模拟器配置指南配图">
+          <div class="body">
+            <span class="chip">掌机</span>
+            <h3>掌机模拟器配置指南（2026 秋）</h3>
+            <p>按芯片分三档给出可跑帧率：骁龙 8 Gen 3 跑 PS2 大多满帧，天玑 8300 需降分辨率到 1x。附按键映射表。</p>
+            <div class="foot"><span>实测</span><span>·</span><span>4 台设备</span><span>·</span><span>11-01</span></div>
+          </div>
+        </article>
+        <article class="f-card">
+          <img src="https://picsum.photos/seed/96xx-anime-season/640/360" width="640" height="360" loading="lazy" alt="番剧放送时间表日历排版图，用于10月新番时间表配图">
+          <div class="body">
+            <span class="chip accent">番剧</span>
+            <h3>10 月新番追更时间表</h3>
+            <p>按周一到周日列出 23 部在更作品与平台，标出哪些是周三、周六集中更新，方便安排当晚的观看顺序。</p>
+            <div class="foot"><span>每周更新</span><span>·</span><span>23 部</span><span>·</span><span>11-07</span></div>
+          </div>
+        </article>
+        <article class="f-card">
+          <img src="https://picsum.photos/seed/96xx-tool-search/640/360" width="640" height="360" loading="lazy" alt="深色界面的资源检索工具界面示意，用于资源检索工具清单配图">
+          <div class="body">
+            <span class="chip ok">工具</span>
+            <h3>资源检索工具清单（本地优先）</h3>
+            <p>7 个工具按“是否要装客户端”分组，标注支持 Windows / macOS 与是否含广告。默认推荐本地索引类，不上传文件。</p>
+            <div class="foot"><span>7 个</span><span>·</span><span>含替代品</span><span>·</span><span>10-30</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="section" id="updates" aria-labelledby="h-updates">
+      <div class="sec-head">
+        <h2 id="h-updates">最新更新 <span>近七天条目变动</span></h2>
+        <span class="sub">时间均为北京时间</span>
+      </div>
+      <div class="updates">
+        <div class="u-item"><time>11-08 09:20</time><div class="t"><b>《赛博朋克：边缘行者》二刷笔记</b>补第 9 集分镜表，修正首刷时写错的配乐曲名。<small>条目修订 · 动画</small></div></div>
+        <div class="u-item"><time>11-07 21:40</time><div class="t"><b>10 月新番追更时间表</b>加入《胆大党》第二季第 5 集延播通知。<small>方源：官方放送页</small></div></div>
+        <div class="u-item"><time>11-06 18:05</time><div class="t"><b>《黑神话：悟空》二周目配装表</b>替换“金身套”武器段，改用狼牙棒实测数据。<small>实测复测 · 单机</small></div></div>
+        <div class="u-item"><time>11-05 12:30</time><div class="t"><b>出租屋窄桌方案</b>显示器支架涨价 20 元，总价由 966 元调到 986 元。<small>价格更新 · 桌搭</small></div></div>
+        <div class="u-item"><time>11-04 20:15</time><div class="t"><b>掌机模拟器配置指南</b>新增天玑 8300 机型的 1x 分辨率实测帧率。<small>实测补充 · 掌机</small></div></div>
+        <div class="u-item"><time>11-03 10:00</time><div class="t"><b>二手掌机避坑清单</b>补 3 条验机项：摇杆漂移、屏幕烧屏、电池循环数。<small>清单增补 · 二手</small></div></div>
+        <div class="u-item"><time>11-02 19:45</time><div class="t"><b>周日复盘</b>本周弃番 4 部，其中 3 部在第 3 集弃看，原因集中在叙事节奏。<small>复盘 · 全局</small></div></div>
+        <div class="u-item"><time>10-31 15:20</time><div class="t"><b>汉化补丁状态表</b>《极乐迪斯科》社区汉化更新至 1.4 版，修正 200 余处译名。<small>版本更新 · 汉化</small></div></div>
+        <div class="u-item"><time>10-30 11:10</time><div class="t"><b>资源检索工具清单</b>移除 1 款含捆绑安装的客户端，补替代工具 2 个。<small>工具替换 · 工具</small></div></div>
+        <div class="u-item"><time>10-29 22:00</time><div class="t"><b>桌搭预算互助</b>第 4 期收集 37 份配置单，均价 1120 元，中位数 940 元。<small>互动汇总 · 桌搭</small></div></div>
+      </div>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="section" id="cats" aria-labelledby="h-cats">
+      <div class="sec-head">
+        <h2 id="h-cats">分类入口 <span>按你此刻想干的事找</span></h2>
+        <span class="sub">9 个频道 · 标签共用</span>
+      </div>
+      <div class="cat-index">
+        <a class="cat-link" href="/#picks"><b>动画片单</b><span>按周末时长切块</span></a>
+        <a class="cat-link" href="/#picks"><b>单机游戏</b><span>通关时长与汉化状态</span></a>
+        <a class="cat-link" href="/#pick-desk"><b>桌搭装备</b><span>预算分层与替换顺序</span></a>
+        <a class="cat-link" href="/#picks"><b>掌机与模拟器</b><span>按芯片分档实测</span></a>
+        <a class="cat-link" href="/#updates"><b>番剧时间表</b><span>周更日历与延播</span></a>
+        <a class="cat-link" href="/#guide"><b>汉化补丁</b><span>版本号与译名修正</span></a>
+        <a class="cat-link" href="/#guide"><b>本地资源检索</b><span>不上传文件的工具</span></a>
+        <a class="cat-link" href="/#faq"><b>二手避坑</b><span>验机项与价格区间</span></a>
+        <a class="cat-link" href="/#board"><b>周末榜</b><span>追更与弃番对照</span></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析（唯一主体阅读区） -->
+    <section class="section" id="deep" aria-labelledby="h-deep">
+      <div class="sec-head">
+        <h2 id="h-deep">深度解析 <span>“一季追十几部”是怎么把时间吃掉的</span></h2>
+        <span class="sub">数据与说法都标注来源</span>
+      </div>
+      <div class="deep">
+        <div class="deep-main">
+          <h3>判断一：同时追更超过 6 部，完成率会明显下滑</h3>
+          <p>把 10 月新番按“同时在追”分组记录：追 1 到 3 部的周末，平均完成 2.7 部；追 7 部以上的周末，平均完成 3.1 部，但弃番数从 0.4 部升到 2.8 部。数字说明的不是“追得多看得多”，而是“追得多、丢得也多”。10 月 19 日到 11 月 2 日这两周里，弃看时间点高度集中：4 部里有 3 部停在第 3 集，剩下 1 部停在第 7 集。</p>
+          <p>可核对的记录长这样：某 UP 主 10 月 26 日发布的追番进度表列出 11 部在追，其中 5 部标“第 2 集未看完”；同一周，B 站番剧页显示的更新集数里，这 5 部都已有第 4 集。追更数量与实际进度的差额，就是被忽略的时间成本。</p>
+
+          <h3>判断二：“等完结再补”通常省时间，但有一个前提</h3>
+          <p>7 月番里有 9 部在完结后补看，平均每部用时 3.6 小时，比追更的 4.1 小时少 12%。节省来自两处：跳过片头与广告、以及弃掉中途崩坏的作品。但前提是你要先知道哪部崩了，这又依赖别人的复盘。11 月 2 日的复盘把“崩坏”具体化为可指认的节点——第 8 集作画监督更换、第 10 集总集篇占位，而不是一句“后期质量下滑”。</p>
+          <div class="quote"><b>可直接引用的结论：</b>追更的隐性成本是“每集之间等待期带来的重新进入成本”，按 10 月新番样本估算，每部约 0.5 小时。完结补看省下的时间，多数从这个池子里出。</div>
+
+          <h3>判断三：片单推荐和进度表是两种东西，混用会误导</h3>
+          <p>片单回答“值不值得看”，进度表回答“什么时候看得到”。10 月有 3 部作品因为平台错峰上线，片单里排位很前，实际最早能看到的时间比日本放送晚 6 天，其中《胆大党》第二季第 5 集延播到 11 月 9 日。把两者混成一张表，会让人误以为看完就能立刻讨论，其实讨论高峰已经过去了 3 到 5 天。</p>
+          <table class="compare">
+            <caption>2026 年 10 月新番：3 部代表作的两种信息层</caption>
+            <thead><tr><th>条目</th><th>片单层（值不值得看）</th><th>进度层（何时可得）</th></tr></thead>
+            <tbody>
+              <tr><td>《胆大党》第二季</td><td>动作分镜密度高，第 2 集起节奏稳定</td><td class="n">国内平台延后 6 天，第 5 集 11-09 上线</td></tr>
+              <tr><td>《地。―关于地球的运动―》</td><td>台词密度大，建议一次两集</td><td class="n">周三集中更新，共 25 集</td></tr>
+              <tr><td>《夏目友人帐 漆》</td><td>单元剧，适合碎片时间</td><td class="n">周一更新，单集 24 分钟</td></tr>
+            </tbody>
+          </table>
+
+          <h3>判断四：桌搭预算里，最先该加钱的是椅子而不是屏幕</h3>
+          <p>第 4 期桌搭互助收集的 37 份配置单里，均价 1120 元，其中屏幕类支出中位数 620 元、椅类 0 元（用原有办公椅）的样本有 14 份。这 14 份里，9 份在备注里写下“久坐腰不舒服”。把椅子排到预算第一顺位，并不是说屏幕不重要，而是屏幕价格带已经非常透明，加钱的边际收益在 800 元以上迅速变缓，而椅子的舒适度差异在 500 元档位就已经拉开。</p>
+          <p>有一个反例值得放在这里：一位用户 10 月 28 日发帖称把 1200 元全投在 27 寸 2K 屏上，椅子没换，两周后补买腰靠花了 129 元，总支出反而超过直接买带腰托的椅子。这是单一样本，不能当规则，但它把“顺序成本”讲清楚了：先买错再补，价格更高。</p>
+
+          <h3>判断五：汉化补丁的“版本号”比“是否汉化”更值得看</h3>
+          <p>《极乐迪斯科》社区汉化在 10 月 31 日更新到 1.4 版，修正 200 余处译名。版本差异会直接影响理解，尤其是专有名词前后不一致的段落。挑补丁时优先看更新日志里的“译名统一”条目，而不是只看“已汉化”三个字。10 月 30 日之后仍在使用 1.2 版的玩家，会在第 3 章遇到同一人物两种译名的问题。</p>
+        </div>
+        <aside class="deep-side" aria-label="解析辅助信息">
+          <div class="side-box">
+            <h4>可核对清单</h4>
+            <ul>
+              <li>追更样本：11 部在追，5 部第 2 集未看完（10-26 进度表）</li>
+              <li>弃番集中点：第 3 集（4 部中 3 部）</li>
+              <li>完结补看用时：平均 3.6 小时 / 部</li>
+              <li>延播条目：《胆大党》第二季第 5 集，11-09</li>
+              <li>桌搭样本：37 份配置单，中位数 940 元</li>
+            </ul>
+            <p class="mini-note">以上数字对应正文指认的日期与条目，可按条目名回查。</p>
+          </div>
+          <div class="side-box">
+            <h4>区分四类信息</h4>
+            <ul>
+              <li><b>事实：</b>官方放送页标注的更新日期</li>
+              <li><b>回应：</b>平台客服对延播的说明</li>
+              <li><b>转述：</b>UP 主复盘里引用的观众反馈</li>
+              <li><b>推测：</b>对第 8 集作画波动的成因判断</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 6 体验指南 编号步骤 -->
+    <section class="section" id="guide" aria-labelledby="h-guide">
+      <div class="sec-head">
+        <h2 id="h-guide">体验指南 <span>从打开到看完的四步</span></h2>
+        <span class="sub">适用于动画、单机、桌搭三类条目</span>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>先定时长预算</h3>
+          <p>周末可用时间先写下来。两小时以内选单元剧或短篇游戏；四小时以上再碰 10 集以上的连续剧。</p>
+          <span class="tip">参考：单集 24 分钟的 10 集番约 4 小时</span>
+        </div>
+        <div class="step">
+          <h3>查汉化与平台状态</h3>
+          <p>看补丁版本号、平台是否错峰上线、有无总集篇占位。10 月有 3 部存在 6 天左右的平台延迟。</p>
+          <span class="tip">优先看更新日志里的“译名统一”</span>
+        </div>
+        <div class="step">
+          <h3>按节奏切块</h3>
+          <p>连续剧一次两集，留出消化时间；单机按章节存档点切，通常每章 40 到 70 分钟。</p>
+          <span class="tip">《黑神话：悟空》单章约 50 分钟</span>
+        </div>
+        <div class="step">
+          <h3>记录弃看原因</h3>
+          <p>弃番时写下具体集数与原因，比“不好看”有用。复盘时才能区分是节奏问题还是题材不合。</p>
+          <span class="tip">本周 4 部弃番里 3 部停在第 3 集</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="section" id="faq" aria-labelledby="h-faq">
+      <div class="sec-head">
+        <h2 id="h-faq">常见问题 <span>关于片单、汉化与桌搭</span></h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>10 月新番里哪几部适合一个周末补完？</summary>
+          <div class="ans">
+            <p>《赛博朋克：边缘行者》10 集、单集约 24 分钟，合计约 4 小时，最适合一个周六下午加晚上。《夏目友人帐 漆》是单元剧，可以按 3 集一组切。超过 25 集的长篇不适合单周末补，容易在第 10 集前后疲劳。</p>
+          </div>
+        </details>
+        <details>
+          <summary>《黑神话：悟空》二周目还要不要重新收集根器？</summary>
+          <div class="ans">
+            <p>根器与披挂在二周目继承，不需要重新收集，但部分赐福点需要重新激活。二周目推荐先点定身法相关赐福，再补棍法。实测“金身套 + 定身法”清图流在打黄眉阶段能省 6 到 8 分钟。</p>
+          </div>
+        </details>
+        <details>
+          <summary>掌机跑 PS2 模拟器，天玑 8300 够用吗？</summary>
+          <div class="ans">
+            <p>够用但需要降设置。11 月 4 日的实测里，天玑 8300 在 1x 分辨率下多数游戏可到 50 到 60 帧，2x 会掉到 35 帧上下。骁龙 8 Gen 3 可以稳 2x。模拟器版本与游戏兼容性关系很大，先看对应游戏的兼容列表再决定。</p>
+          </div>
+        </details>
+        <details>
+          <summary>汉化补丁只写“已汉化”，能用吗？</summary>
+          <div class="ans">
+            <p>能用，但要接受译名不统一的风险。1.2 版《极乐迪斯科》社区汉化在第 3 章存在同一人物两种译名的情况，1.4 版修正了 200 余处译名。挑补丁时看更新日志里的“译名统一”与“润色”条目，比看首页标注可靠。</p>
+          </div>
+        </details>
+        <details>
+          <summary>出租屋桌子只有 1.2 米宽，双屏放得下吗？</summary>
+          <div class="ans">
+            <p>放得下，但要改用显示器支架。11 月 3 日的窄桌方案里，159 元的单臂支架把屏幕抬离桌面，腾出一条 30 厘米宽的键盘区。双屏建议一横一竖，竖屏放聊天与文档，横屏留给游戏。</p>
+          </div>
+        </details>
+        <details>
+          <summary>二手掌机验机最该看哪几项？</summary>
+          <div class="ans">
+            <p>三项：摇杆漂移、屏幕烧屏、电池循环数。摇杆漂移在设置里打开校准界面即可测出；烧屏在纯色背景下看残影；电池循环数需要进入工程模式或看系统信息。11 月 3 日补充的避坑清单还加了“是否拆修过”的螺丝痕迹检查。</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="section" id="comments" aria-labelledby="h-comments">
+      <div class="sec-head">
+        <h2 id="h-comments">用户评论 <span>带具体条目的反馈</span></h2>
+        <span class="sub">本周收录 6 条，含 2 条吐槽</span>
+      </div>
+      <div class="comments">
+        <article class="cmt">
+          <div class="who"><span class="avatar" style="background:#3b6ea8">阿</span><b>阿澈</b><span>11-08 10:14</span><span class="score">8.5</span></div>
+          <p>《赛博朋克：边缘行者》二刷笔记里第 6 集蒙太奇那段说得对，首刷光顾着看剧情，二刷才发现配乐切换点就在第 14 分钟。这条笔记是这两天最有用的。</p>
+          <span class="to">指向条目：《赛博朋克：边缘行者》二刷笔记</span>
+        </article>
+        <article class="cmt">
+          <div class="who"><span class="avatar" style="background:#e2571e">鹿</span><b>鹿野</b><span>11-07 22:03</span><span class="score">5.0</span></div>
+          <p>10 月新番时间表把《胆大党》第二季第 5 集延播写进去了，这个挺及时。但周三更新的那几部顺序太乱，建议按时间段排，不是按平台排。</p>
+          <span class="to">指向条目：10 月新番追更时间表</span>
+        </article>
+        <article class="cmt">
+          <div class="who"><span class="avatar" style="background:#0f8fa8">青</span><b>青柠汽水</b><span>11-06 19:41</span><span class="score">7.0</span></div>
+          <p>窄桌方案里显示器支架涨价 20 元这件事，更新得算实在。我按清单买齐了，椅子留给下个月，先撑撑。</p>
+          <span class="to">指向条目：出租屋窄桌桌搭方案</span>
+        </article>
+        <article class="cmt">
+          <div class="who"><span class="avatar" style="background:#b8801a">老</span><b>老周不熬夜</b><span>11-05 13:27</span><span class="score">6.5</span></div>
+          <p>二周目配装表里那段“狼牙棒实测”换得对，之前那版武器段明显没打黄眉。不过赐福加点顺序写得有点跳，建议加个前后对照。</p>
+          <span class="to">指向条目：《黑神话：悟空》二周目配装表</span>
+        </article>
+        <article class="cmt">
+          <div class="who"><span class="avatar" style="background:#2f7d52">小</span><b>小满</b><span>11-04 21:56</span><span class="score">9.0</span></div>
+          <p>掌机配置指南里天玑 8300 的 1x 实测帧率，跟我自己跑下来差不多，50 到 58 帧浮动。这种愿意标设备型号的表太少了。</p>
+          <span class="to">指向条目：掌机模拟器配置指南（2026 秋）</span>
+        </article>
+        <article class="cmt">
+          <div class="who"><span class="avatar" style="background:#7b8496">狗</span><b>狗尾巴草</b><span>11-03 09:18</span><span class="score">4.5</span></div>
+          <p>说句不客气的，追更超过 6 部完成率下滑这个结论我同意，但样本只有两周，别写成定论。还有弃番原因写“叙事节奏”太笼统，第 3 集具体哪里慢，能不能指一集。</p>
+          <span class="to">指向条目：深度解析·判断一</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="section" id="news" aria-labelledby="h-news">
+      <div class="sec-head">
+        <h2 id="h-news">相关资讯 <span>平台与版本动态</span></h2>
+        <span class="sub">只列有明确发布主体的消息</span>
+      </div>
+      <div class="news">
+        <article>
+          <h3>《胆大党》第二季第 5 集国内平台延播至 11 月 9 日</h3>
+          <p>平台番剧页更新了放送日期，日本本土按原计划更新。同期讨论高峰已过，补看时弹幕量明显下降。</p>
+          <span class="src">来源：平台番剧页公告 · 2026-11-07</span>
+        </article>
+        <article>
+          <h3>《极乐迪斯科》社区汉化 1.4 版发布</h3>
+          <p>更新日志写明修正 200 余处译名，重点在第 3 章人物称谓统一。作者建议旧存档先备份再覆盖。</p>
+          <span class="src">来源：汉化组发布帖 · 2026-10-31</span>
+        </article>
+        <article>
+          <h3>窄桌显示器支架到手价上调 20 元</h3>
+          <p>清单内单价由 139 元变为 159 元，总价随之调整。其余配件价格未变，整套仍在千元以内。</p>
+          <span class="src">来源：电商到手价快照 · 2026-11-05</span>
+        </article>
+        <article>
+          <h3>本地索引类检索工具新增 macOS 版本</h3>
+          <p>差量索引速度在 M 系列芯片上提升约 30%，文件不上传。旧版本用户需要手动迁移索引目录。</p>
+          <span class="src">来源：开发者更新说明 · 2026-10-30</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="section" id="tags" aria-labelledby="h-tags">
+      <div class="sec-head">
+        <h2 id="h-tags">相关推荐 <span>按具体需求直达</span></h2>
+      </div>
+      <div class="tag-cloud">
+        <a href="/#picks">10月新番完结补看顺序</a>
+        <a href="/#picks">黑神话悟空二周目配装</a>
+        <a href="/#pick-desk">出租屋1.2米窄桌桌搭</a>
+        <a href="/#picks">掌机模拟器天玑8300帧率</a>
+        <a href="/#guide">极乐迪斯科汉化1.4版</a>
+        <a href="/#faq">二手掌机验机三项</a>
+        <a href="/#picks">赛博朋克边缘行者二刷</a>
+        <a href="/#guide">千元内桌搭替换顺序</a>
+        <a href="/#updates">胆大党第二季延播</a>
+        <a href="/#faq">本地索引检索工具替代</a>
+        <a href="/#board">周末追更弃番对照</a>
+        <a href="/#deep">追更数量与完成率</a>
+      </div>
+    </section>
+
+    <!-- 11 补充板块：榜单 + 时间线 -->
+    <section class="section" id="board" aria-labelledby="h-board">
+      <div class="sec-head">
+        <h2 id="h-board">周末榜与时间线 <span>追更与进度的对照</span></h2>
+        <span class="sub">榜单按本周完成人数排序</span>
+      </div>
+      <div class="rank">
+        <div class="card pad">
+          <h3 style="font-size:1rem;margin-bottom:10px">本周看完人数榜（10 月新番）</h3>
+          <ol class="rank-list">
+            <li><div><b>《赛博朋克：边缘行者》</b><small>10 集全 · 本周完成 38 人</small></div></li>
+            <li><div><b>《夏目友人帐 漆》</b><small>单元剧 · 本周完成 26 人</small></div></li>
+            <li><div><b>《地。―关于地球的运动―》</b><small>周三更新 · 本周完成 19 人</small></div></li>
+            <li><div><b>《胆大党》第二季</b><small>延播 1 集 · 本周完成 15 人</small></div></li>
+            <li><div><b>《极乐迪斯科》通关档</b><small>单机 · 本周完成 12 人</small></div></li>
+          </ol>
+          <p class="mini-note" style="font-size:.76rem;color:var(--ink-mute);margin:8px 0 0">完成人数来自站内投票汇总，样本 110 人次。</p>
+        </div>
+        <div class="card pad">
+          <h3 style="font-size:1rem;margin-bottom:10px">11 月版本与放送时间线</h3>
+          <ul class="timeline">
+            <li><time>2026-11-09</time><b>《胆大党》第二季第 5 集国内上线</b></li>
+            <li><time>2026-11-07</time><b>10 月番剧时间表标记延播</b></li>
+            <li><time>2026-11-05</time><b>窄桌支架到手价调整</b></li>
+            <li><time>2026-11-03</time><b>二手掌机避坑清单增补</b></li>
+            <li><time>2026-10-31</time><b>《极乐迪斯科》汉化 1.4 版发布</b></li>
+            <li><time>2026-10-30</time><b>检索工具清单替换 1 款客户端</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 互动栏目 -->
+    <section class="section" id="vote" aria-labelledby="h-vote">
+      <div class="sec-head">
+        <h2 id="h-vote">本周互动 <span>两个问题，投完看结果</span></h2>
+        <span class="sub">截止 2026-11-10 23:00</span>
+      </div>
+      <div class="vote">
+        <div class="vote-box" data-vote="weekend">
+          <h3>这个周末你最想补哪类？</h3>
+          <button class="vote-opt" type="button" aria-pressed="false"><span>10 集短番一次看完</span><span class="bar">42%</span></button>
+          <button class="vote-opt" type="button" aria-pressed="false"><span>单机章节推进两小时</span><span class="bar">33%</span></button>
+          <button class="vote-opt" type="button" aria-pressed="false"><span>先把桌搭理一遍</span><span class="bar">25%</span></button>
+          <p class="vote-note">已投 96 人次，数据为站内示例统计。</p>
+        </div>
+        <div class="vote-box" data-vote="desk">
+          <h3>千元桌搭，第一笔钱花在哪？</h3>
+          <button class="vote-opt" type="button" aria-pressed="false"><span>椅子 / 腰托</span><span class="bar">48%</span></button>
+          <button class="vote-opt" type="button" aria-pressed="false"><span>显示器支架</span><span class="bar">31%</span></button>
+          <button class="vote-opt" type="button" aria-pressed="false"><span>灯光与理线</span><span class="bar">21%</span></button>
+          <p class="vote-note">已投 74 人次，与第 4 期互助汇总口径一致。</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/#top" aria-label="96xx宅男福利社 页脚首页链接">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" style="width:32px;height:32px">
+            <rect width="64" height="64" rx="14" fill="#2c3647"/>
+            <circle cx="32" cy="26" r="12.5" fill="#67e8f9"/>
+            <rect x="15" y="41" width="34" height="9" rx="4.5" fill="#f5b83d"/>
+          </svg>
+          <span class="brand-txt"><strong>96xx宅男福利社</strong><span>宅家娱乐指南</span></span>
+        </a>
+        <p>把片单、单机、桌搭和番剧时间表放在同一张时间表上，按周末能装下的量来排。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容栏目</h4>
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#picks">精选片单</a></li>
+          <li><a href="/#updates">最新更新</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>分类频道</h4>
+        <ul>
+          <li><a href="/#cats">动画 / 单机</a></li>
+          <li><a href="/#cats">桌搭 / 掌机</a></li>
+          <li><a href="/#cats">番剧时间表</a></li>
+          <li><a href="/#cats">汉化 / 工具</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>互动与帮助</h4>
+        <ul>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#board">周末榜</a></li>
+          <li><a href="/#vote">本周投票</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>示例数据说明：片单、游戏、桌搭价格与投票数均为站内示例，标注日期与来源的条目可按名称回查。</span>
+      <span class="upd">正文更新时间 2026-11-08，对应“最新更新”板块 10 条变动。</span>
+      <span>© 2026 96xx宅男福利社 · 保留所有权利</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" type="button" aria-label="回到顶部">
+  <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path d="M8 3l5 5M8 3L3 8M8 3v10" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端菜单 */
+  var menuBtn = document.getElementById('menuBtn');
+  var mainNav = document.getElementById('mainNav');
+  if(menuBtn && mainNav){
+    menuBtn.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mainNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 760){
+        mainNav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* 本地查找：收集 main 内可见文本块，做简单索引与反馈 */
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('searchInput');
+  var feedback = document.getElementById('searchFeedback');
+
+  function buildIndex(){
+    var nodes = document.querySelectorAll('main h2, main h3, main h4, main .cat-link, main .f-card, main .u-item, main .cmt, main .news article, main .tag-cloud a, main .faq details, main .rank-list li, main .timeline li');
+    var items = [];
+    nodes.forEach(function(n){
+      var text = (n.textContent || '').replace(/\s+/g,' ').trim();
+      if(text){ items.push({el:n, text:text.toLowerCase(), raw:text}); }
+    });
+    return items;
+  }
+
+  if(form && input){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var q = input.value.trim().toLowerCase();
+      feedback.textContent = '';
+      if(!q){
+        feedback.textContent = '输入片名、游戏名、装备或问题关键词再查找。';
+        return;
+      }
+      var index = buildIndex();
+      var hits = index.filter(function(it){ return it.text.indexOf(q) !== -1; });
+      if(hits.length === 0){
+        feedback.textContent = '没有找到与“' + input.value.trim() + '”匹配的条目。可以换用片名、设备型号或分类词，例如“边缘行者”“天玑8300”“窄桌”。';
+        return;
+      }
+      var first = hits[0].el;
+      var target = first.closest('section') || first;
+      if(target.id){
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+      }else{
+        first.scrollIntoView({behavior:'smooth', block:'center'});
+      }
+      try{ first.setAttribute('tabindex','-1'); first.focus({preventScroll:true}); }catch(err){}
+      feedback.textContent = '找到 ' + hits.length + ' 处相关内容，已定位到第一条：' + (first.textContent || '').replace(/\s+/g,' ').trim().slice(0,28) + '…';
+    });
+  }
+
+  /* 投票按钮 */
+  document.querySelectorAll('.vote-box').forEach(function(box){
+    var btns = box.querySelectorAll('.vote-opt');
+    btns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        btns.forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+        btn.setAttribute('aria-pressed','true');
+      });
+    });
+  });
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  function onScroll(){
+    if(!toTop) return;
+    if(window.scrollY > 480){ toTop.classList.add('show'); }
+    else{ toTop.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* 侧栏导航滚动高亮 */
+  var navLinks = mainNav ? Array.prototype.slice.call(mainNav.querySelectorAll('a[href^="/#"]')) : [];
+  var targets = navLinks.map(function(a){
+    var id = a.getAttribute('href').slice(2);
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  if('IntersectionObserver' in window && targets.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          navLinks.forEach(function(a){ a.removeAttribute('aria-current'); });
+          var link = navLinks.filter(function(a){ return a.getAttribute('href') === '/#' + en.target.id; })[0];
+          if(link){ link.setAttribute('aria-current','true'); }
+        }
+      });
+    }, {rootMargin:'-120px 0px -60% 0px', threshold:0});
+    targets.forEach(function(t){ io.observe(t); });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "96xx宅男福利社",
+  "description": "宅家娱乐资源指南，整理动画片单、单机游戏、桌搭装备、番剧时间表与本地检索工具，提供可核对的体验建议与避坑清单。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "10 月新番里哪几部适合一个周末补完？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "《赛博朋克：边缘行者》10 集、单集约 24 分钟，合计约 4 小时，最适合一个周六下午加晚上。《夏目友人帐 漆》是单元剧，可以按 3 集一组切。超过 25 集的长篇不适合单周末补。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《黑神话：悟空》二周目还要不要重新收集根器？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "根器与披挂在二周目继承，不需要重新收集，但部分赐福点需要重新激活。二周目推荐先点定身法相关赐福，再补棍法。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "掌机跑 PS2 模拟器，天玑 8300 够用吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "够用但需要降设置。11 月 4 日实测中，天玑 8300 在 1x 分辨率下多数游戏可到 50 到 60 帧，2x 会掉到 35 帧上下。模拟器版本与游戏兼容性关系很大。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "汉化补丁只写“已汉化”，能用吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能用，但要接受译名不统一的风险。1.2 版《极乐迪斯科》社区汉化在第 3 章存在同一人物两种译名的情况，1.4 版修正了 200 余处译名。挑补丁时看更新日志里的译名统一与润色条目。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "出租屋桌子只有 1.2 米宽，双屏放得下吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "放得下，但要改用显示器支架。11 月 3 日的窄桌方案用 159 元的单臂支架把屏幕抬离桌面，腾出约 30 厘米宽的键盘区。双屏建议一横一竖。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "二手掌机验机最该看哪几项？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "三项：摇杆漂移、屏幕烧屏、电池循环数。摇杆漂移在设置里打开校准界面即可测出；烧屏在纯色背景下看残影；电池循环数需要进入工程模式或看系统信息。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+                                             </html>
