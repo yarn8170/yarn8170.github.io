@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>玩物社区入口-潮玩手办与模玩玩家聚集地</title>
+<meta name="description" content="玩物社区入口汇总潮玩手办、模型玩具与收藏玩家的聚集地，提供新品开箱、改造指南、玩家评论与交流入口，帮你找到同好圈子里的真实讨论与判断依据。">
+<meta name="keywords" content="玩物社区入口">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d2740'/%3E%3Ccircle cx='24' cy='26' r='10' fill='%23f2b53c'/%3E%3Ccircle cx='42' cy='38' r='10' fill='%23e8654f'/%3E%3Ccircle cx='24' cy='26' r='4' fill='%231d2740'/%3E%3Ccircle cx='42' cy='38' r='4' fill='%231d2740'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1d2740;
+  --ink-2:#3a4560;
+  --muted:#68718a;
+  --line:#e2e0d8;
+  --paper:#f7f4ec;
+  --card:#ffffff;
+  --brand:#1d2740;
+  --accent:#e8654f;
+  --gold:#f2b53c;
+  --teal:#2c7a72;
+  --radius-s:8px;
+  --radius-m:14px;
+  --radius-l:22px;
+  --shadow-s:0 2px 6px rgba(29,39,64,.07);
+  --shadow-m:0 8px 24px rgba(29,39,64,.10);
+  --space-1:6px;
+  --space-2:12px;
+  --space-3:18px;
+  --space-4:28px;
+  --space-5:44px;
+  --space-6:68px;
+  --fs-h1:clamp(30px,4.4vw,46px);
+  --fs-h2:clamp(21px,2.6vw,27px);
+  --fs-h3:clamp(17px,1.9vw,20px);
+  --fs-body:16px;
+  --fs-small:14px;
+  --fs-tiny:12.5px;
+  --header-h:62px;
+  --notice-h:34px;
+  --font:"Spoqa Han Sans Neo","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + var(--notice-h) + 12px)}
+body{
+  font-family:var(--font);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:var(--fs-body);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:4px}
+
+/* ---- 吸顶区 ---- */
+.stick-stack{position:sticky;top:0;z-index:60}
+.notice-bar{
+  height:var(--notice-h);
+  background:var(--ink);
+  color:#f3efe4;
+  font-size:var(--fs-tiny);
+  display:flex;align-items:center;
+  letter-spacing:.02em;
+}
+.notice-bar .wrap{display:flex;align-items:center;gap:10px;width:100%;overflow:hidden}
+.notice-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex:0 0 auto;animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.notice-bar b{color:var(--gold);font-weight:600}
+.notice-bar .notice-link{margin-left:auto;flex:0 0 auto;border-bottom:1px solid rgba(243,239,228,.4);padding-bottom:1px}
+.notice-bar .notice-link:hover{color:var(--gold)}
+.site-head{
+  height:var(--header-h);
+  background:rgba(247,244,236,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.site-head .wrap{height:100%;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.brand-mark{width:36px;height:36px;flex:0 0 auto}
+.brand-text{font-size:19px;font-weight:700;letter-spacing:.01em;white-space:nowrap}
+.main-nav{display:flex;gap:4px;margin-left:8px;overflow-x:auto;scrollbar-width:none}
+.main-nav::-webkit-scrollbar{display:none}
+.main-nav a{
+  font-size:var(--fs-small);color:var(--ink-2);
+  padding:7px 11px;border-radius:999px;white-space:nowrap;
+  transition:background .18s,color .18s;
+}
+.main-nav a:hover,.main-nav a[aria-current="true"]{background:var(--ink);color:#fff}
+.head-tools{margin-left:auto;display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.search-box{position:relative;display:flex;align-items:center}
+.search-box input{
+  width:170px;height:34px;border:1px solid var(--line);border-radius:999px;
+  padding:0 34px 0 14px;font-size:var(--fs-tiny);background:#fff;color:var(--ink);
+}
+.search-box input::placeholder{color:var(--muted)}
+.search-box button{
+  position:absolute;right:3px;width:28px;height:28px;border:0;border-radius:50%;
+  background:var(--ink);color:#fff;display:grid;place-items:center;
+}
+.search-box button svg{width:14px;height:14px}
+.menu-toggle{
+  display:none;width:38px;height:38px;border:1px solid var(--line);border-radius:10px;
+  background:#fff;align-items:center;justify-content:center;
+}
+.menu-toggle svg{width:19px;height:19px}
+.search-result{
+  position:absolute;top:40px;right:0;width:260px;max-height:260px;overflow:auto;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-s);
+  box-shadow:var(--shadow-m);padding:6px;display:none;z-index:70;
+}
+.search-result.open{display:block}
+.search-result a{display:block;padding:7px 10px;border-radius:6px;font-size:var(--fs-tiny)}
+.search-result a:hover{background:var(--paper)}
+.search-result .empty{padding:10px;font-size:var(--fs-tiny);color:var(--muted)}
+
+/* ---- 首屏 ---- */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#1d2740 0%,#26314e 55%,#203a45 100%);
+  color:#f3efe4;
+  padding:var(--space-6) 0 var(--space-5);
+}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space-5);align-items:center}
+.hero-copy{position:relative;z-index:2}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:var(--fs-tiny);letter-spacing:.14em;
+  border:1px solid rgba(242,181,60,.5);color:var(--gold);
+  padding:5px 12px;border-radius:999px;margin-bottom:var(--space-3);
+}
+.hero h1{font-size:var(--fs-h1);line-height:1.22;letter-spacing:-.01em;margin-bottom:var(--space-3);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-intro{font-size:16.5px;line-height:1.85;color:#d8d3c4;max-width:33em;margin-bottom:var(--space-4)}
+.hero-intro b{color:#fff;font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:var(--fs-small);font-weight:600;
+  border:1px solid transparent;transition:transform .18s,box-shadow .18s,background .18s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--gold);color:var(--ink);box-shadow:0 6px 18px rgba(242,181,60,.28)}
+.btn-primary:hover{background:#ffc94f}
+.btn-ghost{border-color:rgba(243,239,228,.35);color:#f3efe4}
+.btn-ghost:hover{background:rgba(243,239,228,.1)}
+.hero-stats{display:flex;gap:var(--space-4);margin-top:var(--space-5);flex-wrap:wrap}
+.hero-stats div{font-size:var(--fs-tiny);color:#a9b2c6;line-height:1.5}
+.hero-stats strong{display:block;font-size:21px;color:#fff;font-weight:700;letter-spacing:.01em}
+.hero-art{position:relative;height:340px;z-index:1}
+.hero-art svg{width:100%;height:100%;overflow:visible}
+
+/* ---- 主体布局 ---- */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 296px;gap:var(--space-5);align-items:start;padding-top:var(--space-5);padding-bottom:var(--space-5)}
+.main-col{min-width:0;display:flex;flex-direction:column;gap:var(--space-5)}
+.side-col{display:flex;flex-direction:column;gap:var(--space-3);position:sticky;top:calc(var(--header-h) + var(--notice-h) + 16px)}
+
+section.block{scroll-margin-top:calc(var(--header-h) + var(--notice-h) + 14px)}
+.block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:var(--space-3);flex-wrap:wrap}
+.block-head h2{font-size:var(--fs-h2);line-height:1.3;font-weight:800;letter-spacing:-.01em}
+.block-head h2 span{color:var(--accent)}
+.block-head .head-note{font-size:var(--fs-tiny);color:var(--muted)}
+.block-sub{font-size:var(--fs-small);color:var(--muted);max-width:60ch;margin-top:-4px}
+
+/* ---- 概览 ---- */
+.overview-panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);
+  padding:var(--space-4);box-shadow:var(--shadow-s);
+}
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);margin-top:var(--space-3)}
+.ov-item{border-left:3px solid var(--gold);padding-left:12px}
+.ov-item:nth-child(2){border-color:var(--accent)}
+.ov-item:nth-child(3){border-color:var(--teal)}
+.ov-item h3{font-size:var(--fs-small);font-weight:700;margin-bottom:4px}
+.ov-item p{font-size:var(--fs-tiny);color:var(--muted);line-height:1.65}
+
+/* ---- 精选卡片 ---- */
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3)}
+.feature-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s;
+}
+.feature-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-m)}
+.feature-card .thumb{aspect-ratio:16/9;overflow:hidden;background:#eee9dd}
+.feature-card .thumb img{width:100%;height:100%;object-fit:cover}
+.feature-card .body{padding:var(--space-3);display:flex;flex-direction:column;gap:7px;flex:1}
+.tag{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.03em;padding:3px 9px;border-radius:999px;background:#f1ecdd;color:var(--ink-2);align-self:flex-start}
+.tag.t-red{background:#fdece8;color:#c0442f}
+.tag.t-teal{background:#e5f3f1;color:#21655e}
+.tag.t-blue{background:#e8edf9;color:#33467a}
+.feature-card h3{font-size:var(--fs-h3);line-height:1.4;font-weight:700}
+.feature-card p{font-size:var(--fs-tiny);color:var(--muted);line-height:1.7}
+.card-meta{display:flex;gap:10px;font-size:var(--fs-tiny);color:#8b93a6;margin-top:auto;padding-top:6px;flex-wrap:wrap}
+
+/* ---- 紧凑列表 ---- */
+.update-list{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden}
+.update-list li{display:grid;grid-template-columns:82px 1fr auto;gap:14px;padding:13px 18px;align-items:baseline;border-bottom:1px dashed var(--line)}
+.update-list li:last-child{border-bottom:0}
+.update-list time{font-size:var(--fs-tiny);color:var(--muted);font-variant-numeric:tabular-nums}
+.update-list .u-title{font-size:var(--fs-small);font-weight:600}
+.update-list .u-title small{display:block;font-weight:400;color:var(--muted);font-size:var(--fs-tiny);margin-top:2px}
+.update-list .u-src{font-size:var(--fs-tiny);color:#8b93a6;white-space:nowrap}
+.update-list li:hover{background:#fbf8f1}
+
+/* ---- 分类入口 ---- */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cat-item{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);
+  padding:13px 12px;transition:border-color .18s,background .18s;
+}
+.cat-item:hover{border-color:var(--ink);background:#fffdf7}
+.cat-item strong{display:block;font-size:var(--fs-small);font-weight:700;margin-bottom:2px}
+.cat-item span{font-size:var(--fs-tiny);color:var(--muted)}
+
+/* ---- 深度解析 ---- */
+.article-shell{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);padding:var(--space-4);box-shadow:var(--shadow-s)}
+.article-shell > p{margin-bottom:14px;font-size:15.5px}
+.article-shell h3{font-size:var(--fs-h3);margin:var(--space-4) 0 10px;padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.article-shell h3:first-of-type{margin-top:6px}
+.fact-table{width:100%;border-collapse:collapse;font-size:var(--fs-tiny);margin:12px 0 6px}
+.fact-table caption{caption-side:top;text-align:left;font-size:var(--fs-tiny);color:var(--muted);padding-bottom:6px}
+.fact-table th,.fact-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.fact-table th{background:#f4f0e5;font-weight:700;white-space:nowrap}
+.check-list{display:flex;flex-direction:column;gap:8px;margin:10px 0 4px}
+.check-list li{
+  font-size:var(--fs-small);padding:9px 12px 9px 14px;border-radius:var(--radius-s);
+  background:#faf7ef;border-left:3px solid var(--teal);line-height:1.6;
+}
+.check-list b{font-weight:700}
+.pull-quote{
+  border-left:5px solid var(--gold);background:#fdf8ea;padding:12px 16px;border-radius:0 var(--radius-s) var(--radius-s) 0;
+  font-size:15px;margin:14px 0;line-height:1.75;
+}
+.pull-quote cite{display:block;font-size:var(--fs-tiny);color:var(--muted);font-style:normal;margin-top:5px}
+.article-shell .src-note{font-size:var(--fs-tiny);color:var(--muted);background:#f4f0e5;border-radius:var(--radius-s);padding:9px 12px;margin-top:12px}
+
+/* ---- 体验步骤 ---- */
+.steps{counter-reset:step;display:flex;flex-direction:column;gap:10px}
+.steps li{
+  counter-increment:step;position:relative;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:14px 18px 14px 58px;
+}
+.steps li::before{
+  content:counter(step);position:absolute;left:14px;top:14px;
+  width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--gold);
+  display:grid;place-items:center;font-size:13px;font-weight:700;
+}
+.steps strong{display:block;font-size:var(--fs-small);margin-bottom:2px}
+.steps p{font-size:var(--fs-tiny);color:var(--muted);line-height:1.7}
+
+/* ---- FAQ ---- */
+.faq-list{display:flex;flex-direction:column;gap:8px}
+details.faq{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);overflow:hidden}
+details.faq[open]{border-color:var(--ink)}
+details.faq summary{
+  cursor:pointer;list-style:none;padding:13px 42px 13px 16px;position:relative;
+  font-size:var(--fs-small);font-weight:600;line-height:1.55;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{
+  content:"+";position:absolute;right:15px;top:50%;transform:translateY(-50%);
+  font-size:20px;color:var(--accent);font-weight:400;line-height:1;
+}
+details.faq[open] summary::after{content:"–"}
+details.faq .ans{padding:0 16px 14px;font-size:var(--fs-tiny);color:var(--ink-2);line-height:1.8}
+details.faq .ans b{color:var(--ink)}
+
+/* ---- 评论 ---- */
+.cmt-list{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3)}
+.cmt{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);padding:15px 16px}
+.cmt p{font-size:var(--fs-small);line-height:1.75}
+.cmt p b{color:var(--ink);background:#fdf3d8;padding:0 2px;border-radius:3px}
+.cmt .who{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:var(--fs-tiny);color:var(--muted)}
+.avatar{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff;flex:0 0 auto}
+.a1{background:#c0442f}.a2{background:#21655e}.a3{background:#33467a}.a4{background:#8a6a1f}.a5{background:#5a3f7a}
+.stars{color:var(--gold);letter-spacing:1px;font-size:12px}
+
+/* ---- 资讯 ---- */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3)}
+.news-item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);padding:14px 15px;transition:transform .18s,box-shadow .18s}
+.news-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-s)}
+.news-item time{font-size:11.5px;color:var(--accent);font-weight:600;letter-spacing:.02em}
+.news-item h3{font-size:var(--fs-small);font-weight:700;line-height:1.55;margin:5px 0 5px}
+.news-item p{font-size:var(--fs-tiny);color:var(--muted);line-height:1.65}
+
+/* ---- 标签推荐 ---- */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px}
+.tag-cloud a{
+  font-size:var(--fs-tiny);padding:7px 14px;border-radius:999px;
+  background:var(--card);border:1px solid var(--line);color:var(--ink-2);
+  transition:background .18s,color .18s,border-color .18s;
+}
+.tag-cloud a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tag-cloud a small{color:var(--muted);margin-left:4px}
+.tag-cloud a:hover small{color:#c9d0e0}
+
+/* ---- 榜单 ---- */
+.rank-list{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);padding:6px 0}
+.rank-list li{display:grid;grid-template-columns:30px 1fr auto;gap:12px;align-items:center;padding:11px 18px;border-bottom:1px dashed var(--line)}
+.rank-list li:last-child{border-bottom:0}
+.rank-no{font-weight:800;font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums;text-align:center}
+.rank-list li:nth-child(1) .rank-no{color:var(--accent)}
+.rank-list li:nth-child(2) .rank-no{color:#b07a1a}
+.rank-list li:nth-child(3) .rank-no{color:#21655e}
+.rank-main strong{display:block;font-size:var(--fs-small);font-weight:700}
+.rank-main span{font-size:var(--fs-tiny);color:var(--muted)}
+.rank-val{font-size:12px;color:var(--muted);text-align:right;line-height:1.35}
+.rank-val b{display:block;color:var(--ink);font-size:13px}
+
+/* ---- 时间线 ---- */
+.timeline{position:relative;padding-left:22px}
+.timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),var(--accent),var(--teal))}
+.timeline li{position:relative;padding:0 0 16px 8px}
+.timeline li::before{content:"";position:absolute;left:-21px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--card);border:2px solid var(--ink)}
+.timeline time{font-size:11.5px;color:var(--accent);font-weight:600}
+.timeline strong{display:block;font-size:var(--fs-small)}
+.timeline p{font-size:var(--fs-tiny);color:var(--muted);line-height:1.65}
+
+/* ---- 侧栏 ---- */
+.side-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);padding:16px 16px 12px}
+.side-card h2{font-size:15px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.side-card h2::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent);display:inline-block}
+.side-nav{display:flex;flex-direction:column;gap:2px;max-height:340px;overflow:auto}
+.side-nav a{font-size:13px;color:var(--ink-2);padding:6px 10px;border-radius:6px;border-left:2px solid transparent;transition:background .15s,color .15s,border-color .15s}
+.side-nav a:hover{background:var(--paper)}
+.side-nav a.active{background:#fdf3d8;color:var(--ink);font-weight:700;border-left-color:var(--accent)}
+.side-post{display:block;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13px;line-height:1.6}
+.side-post:last-child{border-bottom:0}
+.side-post:hover{color:var(--accent)}
+.side-post time{display:block;font-size:11.5px;color:var(--muted)}
+.side-note{font-size:12px;color:var(--muted);line-height:1.7;background:#f4f0e5;border-radius:var(--radius-s);padding:11px 13px}
+.entry-box{background:linear-gradient(150deg,#1d2740,#2c3d5e);color:#f3efe4;border-radius:var(--radius-m);padding:18px;text-align:center}
+.entry-box h2{font-size:15px;margin-bottom:6px;justify-content:center}
+.entry-box p{font-size:12.5px;color:#c4c9d6;line-height:1.7;margin-bottom:12px}
+.entry-box a{display:block;background:var(--gold);color:var(--ink);font-size:13px;font-weight:700;padding:9px;border-radius:999px}
+.entry-box a:hover{background:#ffc94f}
+
+/* ---- 背板条 ---- */
+.trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:var(--space-3)}
+.trust-cell{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);padding:12px 13px}
+.trust-cell b{display:block;font-size:18px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums}
+.trust-cell span{font-size:11.5px;color:var(--muted);line-height:1.5}
+
+/* ---- 页脚 ---- */
+.site-foot{background:var(--ink);color:#c4c9d6;margin-top:var(--space-5);padding:var(--space-5) 0 var(--space-3);font-size:var(--fs-tiny)}
+.foot-top{display:grid;grid-template-columns:1.4fr 2fr;gap:var(--space-5);padding-bottom:var(--space-4);border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand .brand-text{color:#fff;font-size:20px}
+.foot-brand p{margin-top:10px;line-height:1.8;max-width:34ch;color:#a9b2c6}
+.foot-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3)}
+.foot-groups h3{font-size:13px;color:#fff;margin-bottom:8px;font-weight:700}
+.foot-groups a{display:block;padding:3px 0;color:#a9b2c6;font-size:12.5px}
+.foot-groups a:hover{color:var(--gold)}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:var(--space-3);color:#8b93a6;font-size:12px;line-height:1.8}
+.foot-bottom .disclaimer{max-width:64ch}
+
+/* ---- 回到顶部 ---- */
+.to-top{
+  position:fixed;right:18px;bottom:22px;z-index:80;
+  width:44px;height:44px;border-radius:50%;border:0;
+  background:var(--ink);color:var(--gold);display:grid;place-items:center;
+  box-shadow:var(--shadow-m);opacity:0;pointer-events:none;transform:translateY(10px);
+  transition:opacity .22s,transform .22s;
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-top svg{width:18px;height:18px}
+
+/* ---- 响应式 ---- */
+@media (max-width:1024px){
+  .layout{grid-template-columns:1fr}
+  .side-col{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3);margin-top:var(--space-4)}
+  .entry-box,.side-note{grid-column:span 2}
+  .hero .wrap{grid-template-columns:1fr;gap:var(--space-4)}
+  .hero-art{height:250px;order:2}
+  .cat-grid{grid-template-columns:repeat(3,1fr)}
+  .news-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-strip{grid-template-columns:repeat(2,1fr)}
+  .foot-top{grid-template-columns:1fr;gap:var(--space-4)}
+}
+@media (max-width:860px){
+  .main-nav{
+    display:none;position:absolute;top:calc(var(--header-h) + var(--notice-h));left:0;right:0;
+    background:#fff;border-bottom:1px solid var(--line);flex-direction:column;gap:0;
+    padding:8px 14px 14px;box-shadow:var(--shadow-m);margin-left:0;max-height:60vh;overflow:auto;
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{border-radius:8px;padding:10px 12px;font-size:14px}
+  .menu-toggle{display:flex}
+  .site-head .wrap{gap:10px}
+  .head-tools{margin-left:auto}
+  .search-box input{width:130px}
+  .search-result{right:0;width:240px}
+}
+@media (max-width:720px){
+  :root{--space-5:32px;--space-6:48px}
+  .card-grid,.cmt-list,.news-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .overview-grid{grid-template-columns:1fr}
+  .side-col{grid-template-columns:1fr}
+  .entry-box,.side-note{grid-column:auto}
+  .search-box input{width:104px}
+  .notice-bar .notice-link{display:none}
+  .hero-stats{gap:var(--space-3)}
+  .hero-stats strong{font-size:18px}
+  .update-list li{grid-template-columns:70px 1fr;gap:10px}
+  .update-list .u-src{grid-column:2;white-space:normal}
+  .foot-groups{grid-template-columns:repeat(2,1fr)}
+  .article-shell{padding:18px 16px}
+  .to-top{right:14px;bottom:16px;width:40px;height:40px}
+}
+@media (max-width:400px){
+  .wrap{padding:0 14px}
+  .brand-text{font-size:16px}
+  .search-box input{width:88px}
+  .hero h1{font-size:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .feature-card:hover,.news-item:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="stick-stack">
+  <div class="notice-bar" id="notice">
+    <div class="wrap">
+      <span class="notice-dot" aria-hidden="true"></span>
+      <span><b>玩物社区入口</b> 11月6日更新：1688家店铺潮玩盲盒抽检名单与“无盒收藏”讨论帖已同步，模玩改造赛报名截止11月20日</span>
+      <a class="notice-link" href="/#updates">查看更新</a>
+    </div>
+  </div>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="/#top" aria-label="玩物社区入口 首页">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#1d2740"/>
+          <circle cx="24" cy="26" r="11" fill="#f2b53c"/>
+          <circle cx="42" cy="38" r="11" fill="#e8654f"/>
+          <circle cx="24" cy="26" r="4" fill="#1d2740"/>
+          <circle cx="42" cy="38" r="4" fill="#1d2740"/>
+          <path d="M32 12v6M32 46v6" stroke="#f3efe4" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">玩物社区入口</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="展开主题导航">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选推荐</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#rank">人气榜单</a>
+      </nav>
+
+      <div class="head-tools">
+        <div class="search-box">
+          <input type="search" id="siteSearch" placeholder="搜条目、店铺、玩法" aria-label="站内搜索" autocomplete="off">
+          <button type="button" id="searchBtn" aria-label="执行搜索">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          </button>
+          <div class="search-result" id="searchResult" role="region" aria-live="polite" aria-label="搜索结果"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="hero-kicker">潮玩 · 手办 · 模玩 · 收藏</span>
+        <h1 id="heroTitle">玩物社区入口</h1>
+        <p class="hero-intro">把散落在平台、贴吧与私域群里的玩具讨论聚到一处：<b>盲盒抽检报告、模型改造件清单、二手寄售行情和线下展会排期</b>，都按条目归档。想查一盒的批次、比一家店的价、找一群同城换娃的人，从这里进去就行。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#featured">进入精选内容</a>
+          <a class="btn btn-ghost" href="/#categories">按品类找圈子</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>312</strong>条在架讨论</div>
+          <div><strong>86</strong>家店铺抽检记录</div>
+          <div><strong>41</strong>场11月线下展会</div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 360" role="presentation">
+          <defs>
+            <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f2b53c" stop-opacity=".22"/>
+              <stop offset="1" stop-color="#e8654f" stop-opacity=".05"/>
+            </linearGradient>
+          </defs>
+          <circle cx="215" cy="175" r="158" fill="url(#glow)"/>
+          <circle cx="215" cy="175" r="158" fill="none" stroke="#f3efe4" stroke-opacity=".16" stroke-dasharray="3 7"/>
+          <rect x="66" y="118" width="122" height="122" rx="16" fill="#f2b53c"/>
+          <rect x="86" y="138" width="82" height="52" rx="8" fill="#1d2740" opacity=".85"/>
+          <circle cx="104" cy="164" r="8" fill="#f3efe4"/>
+          <circle cx="140" cy="164" r="8" fill="#f3efe4"/>
+          <rect x="96" y="202" width="62" height="8" rx="4" fill="#1d2740" opacity=".6"/>
+          <rect x="232" y="70" width="118" height="118" rx="16" fill="#e8654f"/>
+          <circle cx="291" cy="129" r="34" fill="#1d2740" opacity=".82"/>
+          <path d="M277 129h28M291 115v28" stroke="#f3efe4" stroke-width="4" stroke-linecap="round"/>
+          <rect x="176" y="206" width="140" height="96" rx="14" fill="#2c7a72"/>
+          <rect x="194" y="226" width="58" height="10" rx="5" fill="#f3efe4" opacity=".85"/>
+          <rect x="194" y="246" width="96" height="10" rx="5" fill="#f3efe4" opacity=".45"/>
+          <rect x="194" y="266" width="76" height="10" rx="5" fill="#f3efe4" opacity=".3"/>
+          <circle cx="330" cy="238" r="20" fill="#f2b53c"/>
+          <path d="M322 238l6 6 10-12" stroke="#1d2740" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="96" cy="292" r="13" fill="#f3efe4" opacity=".5"/>
+          <circle cx="128" cy="308" r="8" fill="#f3efe4" opacity=".28"/>
+          <path d="M356 96l8 18 18 8-18 8-8 18-8-18-18-8 18-8z" fill="#f3efe4" opacity=".7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+
+    <div class="main-col">
+
+      <!-- 领域概览 -->
+      <section class="block" id="overview" aria-labelledby="ovTitle">
+        <div class="block-head">
+          <h2 id="ovTitle"><span>01</span> 领域概览</h2>
+          <span class="head-note">截至 2026-11-08</span>
+        </div>
+        <div class="overview-panel">
+          <p class="block-sub">“玩物”在圈内分两条主线：一条看设计与稀缺度，盲盒、搪胶、雕像偏收藏；一条看结构与可动性，拼装模型、合金成品偏把玩。两条线的信息需求差别很大，入口也分开。</p>
+          <div class="overview-grid">
+            <div class="ov-item">
+              <h3>收藏线：看批次与抽检</h3>
+              <p>盲盒、搪胶、雕像更关心首发批次、隐藏概率与抽检结果。2026年11月6日公布的1688家店铺抽检名单里，有7家因标签与实物不符被下架。</p>
+            </div>
+            <div class="ov-item">
+              <h3>把玩线：看结构与件数</h3>
+              <p>拼装与合金成品关注骨架设计、板件水口与替换件数量。HG 与 MG 的差价常来自内构细节，不只看比例尺寸。</p>
+            </div>
+            <div class="ov-item">
+              <h3>交易线：看寄售与验货</h3>
+              <p>二手寄售的争议集中在运损与拆封认定。多家寄售平台在10月下旬上线了开箱录像要求，验收周期从3天延到5天。</p>
+            </div>
+          </div>
+          <div class="trust-strip">
+            <div class="trust-cell"><b>7</b><span>11月6日抽检不合格店铺</span></div>
+            <div class="trust-cell"><b>5天</b><span>寄售验收新周期</span></div>
+            <div class="trust-cell"><b>3.6万</b><span>本周改造赛投稿件数</span></div>
+            <div class="trust-cell"><b>41</b><span>11月线下展会排期</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 精选内容推荐 -->
+      <section class="block" id="featured" aria-labelledby="ftTitle">
+        <div class="block-head">
+          <h2 id="ftTitle"><span>02</span> 精选内容推荐</h2>
+          <span class="head-note">编辑按讨论密度挑选</span>
+        </div>
+        <div class="card-grid">
+          <article class="feature-card">
+            <div class="thumb"><img src="https://picsum.photos/seed/wanwu-blindbox/640/360" width="640" height="360" loading="lazy" alt="桌面上排列的六款盲盒搪胶公仔与抽检标签"></div>
+            <div class="body">
+              <span class="tag t-red">盲盒抽检</span>
+              <h3>1688家店铺抽检名单：标签与实物不符的7家怎么认</h3>
+              <p>11月6日公布的名单里，问题集中在印刷色号偏差与隐藏款概率标注。附一张对照表，教你看标签上的批次码位置。</p>
+              <div class="card-meta"><span>11月6日</span><span>讨论 486</span><span>作者：阿桐拆盒</span></div>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="thumb"><img src="https://picsum.photos/seed/wanwu-modelkit/640/360" width="640" height="360" loading="lazy" alt="拼装模型板件与剪钳、打磨条铺在工作垫上"></div>
+            <div class="body">
+              <span class="tag t-teal">模型改造</span>
+              <h3>HG 骨架加装金属关节：3种件号的重量与松紧对比</h3>
+              <p>用同一台机体分别装三种改造件，记录上臂承重、摆姿势后的回落角度。结论是件号 B-07 更适合长期站立展示。</p>
+              <div class="card-meta"><span>11月4日</span><span>讨论 302</span><span>作者：铣刀老周</span></div>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="thumb"><img src="https://picsum.photos/seed/wanwu-secondhand/640/360" width="640" height="360" loading="lazy" alt="二手寄售包裹开箱验货，旁边放着塑封袋和标签"></div>
+            <div class="body">
+              <span class="tag t-blue">二手寄售</span>
+              <h3>寄售验收延到5天，开箱录像到底该拍哪几段</h3>
+              <p>拍单号、拍封口、拍内衬三处缺一不可。10月28日之后成立的寄售单，缺录像的运损申诉成功率明显下降。</p>
+              <div class="card-meta"><span>11月2日</span><span>讨论 271</span><span>作者：胶袋小姐</span></div>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="thumb"><img src="https://picsum.photos/seed/wanwu-expo/640/360" width="640" height="360" loading="lazy" alt="漫展摊位前排队的玩家与展台上的限定手办"></div>
+            <div class="body">
+              <span class="tag t-red">线下展会</span>
+              <h3>11月上海场限定品排期：哪些摊位值得提前两小时到</h3>
+              <p>首发限定的摊位集中在B馆东侧，限量数字从80体到300体不等。按往届清场时间推算，10点前到场基本能买到第二梯队。</p>
+              <div class="card-meta"><span>11月5日</span><span>讨论 198</span><span>作者：排队专业户</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="block" id="updates" aria-labelledby="upTitle">
+        <div class="block-head">
+          <h2 id="upTitle"><span>03</span> 最新更新</h2>
+          <span class="head-note">按发布时间倒序</span>
+        </div>
+        <ul class="update-list">
+          <li>
+            <time datetime="2026-11-08">今天 09:20</time>
+            <span class="u-title">无盒收藏讨论帖上线：没有原盒的手办怎么估价<small>帖子列出12条估价维度，附三家寄售平台对“无盒”的扣价比例</small></span>
+            <span class="u-src">讨论区</span>
+          </li>
+          <li>
+            <time datetime="2026-11-07">昨天 16:45</time>
+            <span class="u-title">模玩改造赛报名截止日调整为11月20日<small>主办方在原公告上加了补报名通道，作品提交仍按原定12月5日</small></span>
+            <span class="u-src">赛事公告</span>
+          </li>
+          <li>
+            <time datetime="2026-11-06">11月6日</time>
+            <span class="u-title">1688家店铺盲盒抽检名单发布<small>7家不合格，问题为标签色号与隐藏概率标注，均已下架处理</small></span>
+            <span class="u-src">抽检公示</span>
+          </li>
+          <li>
+            <time datetime="2026-11-04">11月4日</time>
+            <span class="u-title">HG 金属关节改造件 B-07 补货<small>上一批在10月31日售罄，本次到货量按店铺公告为420套</small></span>
+            <span class="u-src">器材行情</span>
+          </li>
+          <li>
+            <time datetime="2026-11-01">11月1日</time>
+            <span class="u-title">11月线下展会排期汇总更新至41场<small>新增成都与南京两场，其中南京场限定品数量未公布</small></span>
+            <span class="u-src">展会日历</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="block" id="categories" aria-labelledby="catTitle">
+        <div class="block-head">
+          <h2 id="catTitle"><span>04</span> 分类入口</h2>
+          <span class="head-note">按你会搜的词分组</span>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-item" href="/#featured"><strong>盲盒隐藏款</strong><span>概率与批次讨论</span></a>
+          <a class="cat-item" href="/#featured"><strong>拼装模型板件</strong><span>水口与内构对比</span></a>
+          <a class="cat-item" href="/#deep"><strong>合金成品机甲</strong><span>重量与关节耐久</span></a>
+          <a class="cat-item" href="/#featured"><strong>搪胶公仔</strong><span>涂装与瑕疵认定</span></a>
+          <a class="cat-item" href="/#guide"><strong>手办展示柜</strong><span>层高与防尘方案</span></a>
+          <a class="cat-item" href="/#guide"><strong>模型喷漆上色</strong><span>稀释比例与干燥</span></a>
+          <a class="cat-item" href="/#rank"><strong>二手寄售行情</strong><span>成交价与扣价项</span></a>
+          <a class="cat-item" href="/#news"><strong>线下展会限定</strong><span>排期与限量数</span></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="block" id="deep" aria-labelledby="deepTitle">
+        <div class="block-head">
+          <h2 id="deepTitle"><span>05</span> 深度解析</h2>
+          <span class="head-note">全页唯一主体阅读区</span>
+        </div>
+        <article class="article-shell">
+          <p>盲盒的“隐藏款概率”标注，是今年圈内争议最集中、也最容易被含糊带过的一条。下面这个判断可以直接被反驳：<strong>标注以“整箱为单位”描述概率的店铺，其单盒消费者的实际中奖体验，会比标注“单盒概率”的店铺更容易出现预期落差。</strong>理由不在商家诚信，而在信息结构。</p>
+
+          <h3>一、批次时间线：三次标注口径变化</h3>
+          <p>把近一个月的公开信息排一下，能看出标注方式在变。</p>
+          <ul class="check-list" style="list-style:none;padding:0;margin:10px 0">
+            <li><b>2026年10月12日</b>　五家主营盲盒的店铺在商品页加上“隐藏款1/144”字样，未注明分母单位，评论区当即出现“是整箱还是单盒”的追问。</li>
+            <li><b>2026年10月23日</b>　两家店铺改标注为“整箱12盒中隐藏款概率1/12”，同页补了一行小字说明单盒不保证。</li>
+            <li><b>2026年11月6日</b>　抽检名单公布，7家不合格里有3家的争议点正是分母单位未写清，处理方式为下架并重新上架改标。</li>
+          </ul>
+          <p>时间线说明一件事：问题不在数字大小，而在数字后面跟着什么单位。单盒玩家看到“1/144”，会自然理解为自己买一盒的中奖机会；整箱玩家看到同一个数字，理解完全不同。</p>
+
+          <h3>二、数据对比：两种标注口径下的预期落差</h3>
+          <table class="fact-table">
+            <caption>同一隐藏款在不同标注口径下的理解差异（据10月至11月公开商品页整理）</caption>
+            <thead>
+              <tr><th>标注写法</th><th>单盒买家理解</th><th>整箱买家理解</th><th>常见争议</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>隐藏款 1/144</td><td>买144盒中1盒</td><td>12箱中1箱</td><td>分母单位缺失，双方各执一词</td></tr>
+              <tr><td>整箱12盒，隐藏1/12</td><td>买一盒可能没有</td><td>买一箱有1盒</td><td>单盒买家觉得被“整箱”绑定</td></tr>
+              <tr><td>单盒概率 1/144，整箱另标</td><td>与自己预期一致</td><td>需另算期望</td><td>页面较长，容易被忽略</td></tr>
+            </tbody>
+          </table>
+          <p>表格里第三行是相对清晰的写法，但它有个副作用：页面信息变长，很多人只看第一屏。11月6日被下架的3家店铺，改标后页面长度平均增加了近一倍，移动端首屏已经看不到隐藏款说明。</p>
+
+          <div class="pull-quote">
+            圈内流传的一句话可以对照来看：“买盒看运气，买箱看规则。”<cite>——出自10月29日某模玩论坛置顶帖，帖内附了该论坛2025年至今的抽盒记录表</cite>
+          </div>
+
+          <h3>三、说法差异：商家、买家、抽检方各说什么</h3>
+          <p>商家一侧的解释是“行业惯例”，认为整箱概率是批发语境下的常用口径；买家一侧的反驳是“零售页面就该按零售单位写”；抽检方的处理意见则更中性，只要求分母单位明确，不判定概率数值本身是否合理。三方的分歧点其实只有一个：<strong>页面默认读者是单盒买家还是整箱买家。</strong></p>
+          <p>这个分歧可以拆成可核对的结构：先看商品标题是否含“整箱”“端盒”字样，再看隐藏款说明所在位置是否在第一屏，最后看是否有单独的单盒概率行。三项里缺两项，单盒买家的预期落差就有较大可能出现。这个判断可以直接拿去反驳：如果某店铺三项齐全，仍出现大面积落差，那就要往概率数值本身找原因，而不是标注结构。</p>
+
+          <h3>四、规则前后变化：11月之后怎么改</h3>
+          <p>抽检名单公布后，可观察到两类调整。一类是把分母单位写进标题，例如“端盒12盒装｜隐藏1/12”；另一类是在详情页顶部加一个折叠说明块，默认收起。前者对单盒买家更友好，后者在移动端的实际触达率存疑——折叠块被点开的比例，目前没有公开数据，这里只能标注为观察，不作结论。</p>
+          <p>另有一处变化容易被忽略：部分店铺把“隐藏款概率”与“抽中后是否可换”分开写。10月之前这两条常合并成一句，11月起分开的店铺多了，原因是寄售验收周期延长后，换货链路变长，合并写法容易引发二次争议。</p>
+
+          <div class="src-note">核对来源：11月6日抽检公示名单、10月12日至11月6日五家店铺商品页截图、10月29日论坛置顶帖及其抽盒记录表。表中“单盒买家理解”一列为按常见读法归纳，非平台官方表述。</div>
+        </article>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="block" id="guide" aria-labelledby="guideTitle">
+        <div class="block-head">
+          <h2 id="guideTitle"><span>06</span> 体验指南</h2>
+          <span class="head-note">新入圈照着走</span>
+        </div>
+        <ol class="steps">
+          <li>
+            <strong>先定线：收藏还是把玩</strong>
+            <p>想清楚买来摆还是买来拆。摆件重涂装与完整性，拆件重结构与可动。两条线在二手市场的扣价项完全不同，混着买容易两头不讨好。</p>
+          </li>
+          <li>
+            <strong>查批次，再下单</strong>
+            <p>盲盒看标签批次码与抽检记录，模型看板件批次与再版时间。11月6日名单里被下架的7家，问题都在标签信息，不在价格。</p>
+          </li>
+          <li>
+            <strong>留开箱证据</strong>
+            <p>寄售验收延到5天后，开箱录像成了标配。拍单号、封口、内衬三段，缺一段申诉时容易吃亏。</p>
+          </li>
+          <li>
+            <strong>改造先试小件</strong>
+            <p>金属关节、替换手、水贴三类里，先从小件试。B-07 这类改造件的重量差异，直接装在大件上再拆，容易伤到板件卡榫。</p>
+          </li>
+          <li>
+            <strong>逛展按限量数排优先级</strong>
+            <p>80体的限定与300体的限定，排队策略完全不同。先看官方公布的数量，再对照往届清场时间，决定到场顺序。</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- 升级与可信度分层 -->
+      <section class="block" id="trust" aria-labelledby="trTitle">
+        <div class="block-head">
+          <h2 id="trTitle"><span>07</span> 信息可信度分层</h2>
+          <span class="head-note">看帖先看来源层级</span>
+        </div>
+        <div class="overview-panel">
+          <p class="block-sub">同一件事在圈里常有三种说法，来源不同，可信度不同。下面按可核对程度分层，每条给出核对动作。</p>
+          <div class="overview-grid">
+            <div class="ov-item">
+              <h3>第一层：可核对的公示</h3>
+              <p>抽检名单、赛事公告、展会排期表。特征是有发布日期与发布主体，可直接查原文。核对动作：找原始公告页与日期。</p>
+            </div>
+            <div class="ov-item">
+              <h3>第二层：带凭证的玩家记录</h3>
+              <p>抽盒记录表、开箱录像、改造前后对比图。特征是有时间戳与连续画面。核对动作：看时间戳是否连贯，画面是否可辨批次码。</p>
+            </div>
+            <div class="ov-item">
+              <h3>第三层：转述与推测</h3>
+              <p>“听说某店要涨价”“据说这批隐藏变多”。特征是无原文、无日期、无凭证。核对动作：暂记为待证实，不作下单依据。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="block" id="faq" aria-labelledby="faqTitle">
+        <div class="block-head">
+          <h2 id="faqTitle"><span>08</span> 常见问答</h2>
+          <span class="head-note">点开看答案</span>
+        </div>
+        <div class="faq-list">
+          <details class="faq">
+            <summary>盲盒隐藏款概率标注 1/144，到底是整箱还是单盒？</summary>
+            <div class="ans">看分母单位有没有写明。只写 1/144 的，多数店铺实际指整箱语境；写明“单盒概率”的才按单盒算。<b>11月6日抽检名单</b>里有3家就因这处未写清被下架改标，下单前把商品页翻到隐藏款说明那一行再决定。</div>
+          </details>
+          <details class="faq">
+            <summary>二手寄售验收为什么从3天延到5天？</summary>
+            <div class="ans">寄售单量在10月下旬上涨后，运损申诉集中在封口与内衬两处，3天不够完成录像复核。多家平台把周期延到5天，同时要求开箱录像。<b>缺录像的申诉</b>成功率明显下降，拍三段是最低要求。</div>
+          </details>
+          <details class="faq">
+            <summary>HG 金属关节改造件怎么选，B-07 适合什么机体？</summary>
+            <div class="ans">B-07 的重量偏中，适合需要长期站立展示、摆姿势不频繁的机体。上臂承重大的机型装上去回落角度更小，但肩部卡榫偏紧，拆装要慢。<b>11月4日补货420套</b>，上一批10月31日售罄。</div>
+          </details>
+          <details class="faq">
+            <summary>无盒手办还能寄售吗，扣价大概多少？</summary>
+            <div class="ans">能寄售，但扣价项变多。原盒缺失、内衬不全、说明书遗失是三项主要扣价，三家平台的扣价比例不一致，<b>11月8日上线</b>的讨论帖列了12条估价维度，可以逐条对照自己的件。</div>
+          </details>
+          <details class="faq">
+            <summary>线下展会限定品，提前多久到场比较稳？</summary>
+            <div class="ans">按限量数分。80体级别的首发限定，往届清场时间在开场后40分钟内，需早到两小时以上；300体级别的第二梯队，10点前到场通常还有余量。<b>11月上海场</b>的限定摊位集中在B馆东侧。</div>
+          </details>
+          <details class="faq">
+            <summary>模型喷漆上色，稀释比例和干燥时间怎么定？</summary>
+            <div class="ans">按漆种分，不按品牌分。同一品牌的不同系列稀释比也可能不同，先在小块废板件上试。干燥时间受湿度影响大，梅雨季与干燥季相差接近一倍，<b>上色前先看当天湿度</b>比记固定分钟数更实用。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="block" id="comments" aria-labelledby="cmTitle">
+        <div class="block-head">
+          <h2 id="cmTitle"><span>09</span> 玩家评论</h2>
+          <span class="head-note">含中性意见</span>
+        </div>
+        <div class="cmt-list">
+          <div class="cmt">
+            <p>抽检名单里那7家，我买过其中一家的端盒，标签色号确实和实物差一截。<b>批次码在盒底贴纸下方</b>，不撕开看不到，这点要是能提前写清楚就好了。</p>
+            <div class="who"><span class="avatar a1">桐</span><span>阿桐拆盒</span><span class="stars">★★★★☆</span></div>
+          </div>
+          <div class="cmt">
+            <p>B-07 装完站了两周，肩部没松，但<b>膝关节回落角度比原装大了大概5度</b>。展示没问题，摆动作拍照就有点烦。</p>
+            <div class="who"><span class="avatar a2">周</span><span>铣刀老周</span><span class="stars">★★★★☆</span></div>
+          </div>
+          <div class="cmt">
+            <p>寄售延到5天我其实不太理解。买家是方便了，卖家回款慢。<b>10月28日之后成立的单</b>全都按新周期走，这点公告里没写得太清楚。</p>
+            <div class="who"><span class="avatar a3">胶</span><span>胶袋小姐</span><span class="stars">★★★☆☆</span></div>
+          </div>
+          <div class="cmt">
+            <p>上海场我去过两届，B馆东侧那个摊位去年10点05分就挂售罄牌了。<b>今年限量和去年差不多</b>，提前两小时到不算夸张。</p>
+            <div class="who"><span class="avatar a4">排</span><span>排队专业户</span><span class="stars">★★★★★</span></div>
+          </div>
+          <div class="cmt">
+            <p>无盒估价那个帖子列12条维度有点多，实操下来<b>内衬和说明书两项就占了大半扣价</b>。剩下10条参考意义有限。</p>
+            <div class="who"><span class="avatar a5">柜</span><span>柜子不够用</span><span class="stars">★★★☆☆</span></div>
+          </div>
+          <div class="cmt">
+            <p>改造赛截止改到11月20日，报名通道补开了，但<b>作品提交时间没延</b>。等于压缩了创作期，这点主办方应该说明一下。</p>
+            <div class="who"><span class="avatar a1">刀</span><span>刀口涂装</span><span class="stars">★★☆☆☆</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="block" id="news" aria-labelledby="nwTitle">
+        <div class="block-head">
+          <h2 id="nwTitle"><span>10</span> 相关资讯</h2>
+          <span class="head-note">11月动态</span>
+        </div>
+        <div class="news-grid">
+          <a class="news-item" href="/#updates">
+            <time datetime="2026-11-08">11月8日</time>
+            <h3>无盒收藏讨论帖开出12条估价维度</h3>
+            <p>三家寄售平台对“无盒”的扣价比例不一，帖内逐条列出内衬、说明书、封口的处理方式。</p>
+          </a>
+          <a class="news-item" href="/#deep">
+            <time datetime="2026-11-06">11月6日</time>
+            <h3>盲盒抽检名单公布，7家店铺下架</h3>
+            <p>问题集中在印刷色号与隐藏款概率标注，3家因分母单位未写清被要求改标后重新上架。</p>
+          </a>
+          <a class="news-item" href="/#featured">
+            <time datetime="2026-11-04">11月4日</time>
+            <h3>HG 金属关节改造件 B-07 补货到店</h3>
+            <p>本次到货420套，店铺公告称上一批10月31日售罄。上臂承重与回落角度的实测记录同步更新。</p>
+          </a>
+          <a class="news-item" href="/#rank">
+            <time datetime="2026-11-02">11月2日</time>
+            <h3>寄售验收周期统一调整为5天</h3>
+            <p>多家寄售平台在10月下旬上线开箱录像要求，缺录像的运损申诉成功率下降。</p>
+          </a>
+          <a class="news-item" href="/#featured">
+            <time datetime="2026-11-01">11月1日</time>
+            <h3>11月线下展会排期更新至41场</h3>
+            <p>新增成都与南京两场，南京场的限定品数量尚未公布，建议先看官方排期表再定行程。</p>
+          </a>
+          <a class="news-item" href="/#guide">
+            <time datetime="2026-10-29">10月29日</time>
+            <h3>论坛置顶帖附上两年抽盒记录表</h3>
+            <p>帖内记录表覆盖2025年至今的整箱与单盒抽盒结果，被多处引用作为概率讨论的对照材料。</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="block" id="related" aria-labelledby="relTitle">
+        <div class="block-head">
+          <h2 id="relTitle"><span>11</span> 相关推荐</h2>
+          <span class="head-note">按搜索词直达</span>
+        </div>
+        <div class="tag-cloud">
+          <a href="/#featured">盲盒隐藏款概率<small>486</small></a>
+          <a href="/#deep">整箱端盒标注<small>213</small></a>
+          <a href="/#guide">二手寄售开箱录像<small>271</small></a>
+          <a href="/#featured">HG 金属关节改造件<small>302</small></a>
+          <a href="/#guide">手办展示柜层高<small>158</small></a>
+          <a href="/#news">11月漫展限定品排期<small>198</small></a>
+          <a href="/#faq">模型喷漆稀释比例<small>124</small></a>
+          <a href="/#trust">抽检名单核对方法<small>97</small></a>
+          <a href="/#comments">无盒手办估价<small>86</small></a>
+          <a href="/#rank">合金成品机甲重量对比<small>74</small></a>
+        </div>
+      </section>
+
+      <!-- 榜单 -->
+      <section class="block" id="rank" aria-labelledby="rkTitle">
+        <div class="block-head">
+          <h2 id="rkTitle"><span>12</span> 人气榜单</h2>
+          <span class="head-note">本周讨论热度</span>
+        </div>
+        <ul class="rank-list">
+          <li>
+            <span class="rank-no">01</span>
+            <span class="rank-main"><strong>盲盒隐藏款概率标注之争</strong><span>10月12日—11月6日 · 抽检与改标</span></span>
+            <span class="rank-val"><b>486</b>讨论</span>
+          </li>
+          <li>
+            <span class="rank-no">02</span>
+            <span class="rank-main"><strong>HG 骨架加装金属关节实测</strong><span>11月4日更新 · 件号 B-07</span></span>
+            <span class="rank-val"><b>302</b>讨论</span>
+          </li>
+          <li>
+            <span class="rank-no">03</span>
+            <span class="rank-main"><strong>寄售验收延至5天与开箱录像</strong><span>10月28日起 · 多家平台同步</span></span>
+            <span class="rank-val"><b>271</b>讨论</span>
+          </li>
+          <li>
+            <span class="rank-no">04</span>
+            <span class="rank-main"><strong>11月上海场限定品排期</strong><span>11月1日汇总 · 41场展会</span></span>
+            <span class="rank-val"><b>198</b>讨论</span>
+          </li>
+          <li>
+            <span class="rank-no">05</span>
+            <span class="rank-main"><strong>无盒收藏的12条估价维度</strong><span>11月8日上线 · 三家平台对照</span></span>
+            <span class="rank-val"><b>86</b>讨论</span>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <!-- 侧栏 -->
+    <aside class="side-col" aria-label="辅助导航与动态">
+
+      <div class="side-card">
+        <h2>本页导航</h2>
+        <nav class="side-nav" id="sideNav" aria-label="页内栏目索引">
+          <a href="/#overview">领域概览</a>
+          <a href="/#featured">精选内容推荐</a>
+          <a href="/#updates">最新更新</a>
+          <a href="/#categories">分类入口</a>
+          <a href="/#deep">深度解析</a>
+          <a href="/#guide">体验指南</a>
+          <a href="/#trust">可信度分层</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#comments">玩家评论</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#related">相关推荐</a>
+          <a href="/#rank">人气榜单</a>
+        </nav>
+      </div>
+
+      <div class="side-card">
+        <h2>短动态</h2>
+        <a class="side-post" href="/#updates"><span>今天 09:20 · 讨论区</span>无盒收藏讨论帖上线，12条估价维度可逐条对照</a>
+        <a class="side-post" href="/#updates"><span>11月7日 · 赛事公告</span>改造赛补报名开启，作品提交时间未变</a>
+        <a class="side-post" href="/#updates"><span>11月6日 · 抽检公示</span>1688家店铺名单发布，7家不合格已下架</a>
+        <a class="side-post" href="/#updates"><span>11月4日 · 器材行情</span>B-07 金属关节补货420套</a>
+      </div>
+
+      <div class="entry-box">
+        <h2>进圈入口</h2>
+        <p>按收藏线、把玩线、交易线分成三组讨论区，发帖前先看置顶的来源层级说明。</p>
+        <a href="/#categories">选择讨论区</a>
+      </div>
+
+      <p class="side-note">榜单与热度数据按站内讨论计数整理，统计口径为发帖与有效回复之和，每天更新一次。示例数据仅用于展示栏目结构。</p>
+
+    </aside>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#f2b53c"/>
+            <circle cx="24" cy="26" r="11" fill="#1d2740"/>
+            <circle cx="42" cy="38" r="11" fill="#e8654f"/>
+            <circle cx="24" cy="26" r="4" fill="#f2b53c"/>
+            <circle cx="42" cy="38" r="4" fill="#f2b53c"/>
+            <path d="M32 12v6M32 46v6" stroke="#1d2740" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-text">玩物社区入口</span>
+        </div>
+        <p>把盲盒抽检、模型改造、寄售行情与展会排期按条目归拢，讨论按来源层级分类存放。玩家查批次、比价格、找同好都在这一处。</p>
+      </div>
+
+      <div class="foot-groups">
+        <div>
+          <h3>内容栏目</h3>
+          <a href="/#featured">盲盒隐藏款讨论</a>
+          <a href="/#deep">概率标注深度解析</a>
+          <a href="/#guide">模型改造实测</a>
+          <a href="/#trust">来源可信度分层</a>
+        </div>
+        <div>
+          <h3>交易与展会</h3>
+          <a href="/#rank">二手寄售行情</a>
+          <a href="/#news">11月展会排期</a>
+          <a href="/#faq">开箱录像要点</a>
+          <a href="/#comments">无盒估价讨论</a>
+        </div>
+        <div>
+          <h3>参与方式</h3>
+          <a href="/#categories">按品类进讨论区</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#related">相关推荐标签</a>
+          <a href="/#updates">最新更新</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <p class="disclaimer">站内条目、店铺抽检记录、展会排期与评论均为示例数据，用于展示栏目结构与信息组织方式，不构成购买建议。抽检与赛事信息请以发布方原始公告为准。</p>
+      <p>页面更新时间：2026-11-08（对应“最新更新”中的无盒收藏讨论帖）<br>© 2026 玩物社区入口 · 内容整理与讨论归档</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到页面顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端菜单 */
+  var menuToggle = document.getElementById('menuToggle');
+  var mainNav = document.getElementById('mainNav');
+  if(menuToggle && mainNav){
+    menuToggle.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', open ? '收起主题导航' : '展开主题导航');
+    });
+    mainNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded','false');
+        menuToggle.setAttribute('aria-label','展开主题导航');
+      }
+    });
+  }
+
+  /* 本地搜索 */
+  var input = document.getElementById('siteSearch');
+  var btn = document.getElementById('searchBtn');
+  var resultBox = document.getElementById('searchResult');
+  var index = [
+    {t:'盲盒隐藏款概率标注与整箱端盒差异', u:'/#deep'},
+    {t:'1688家店铺盲盒抽检名单 7家不合格', u:'/#updates'},
+    {t:'HG 骨架加装金属关节 B-07 实测', u:'/#featured'},
+    {t:'二手寄售验收延至5天与开箱录像要点', u:'/#guide'},
+    {t:'11月线下展会限定品排期 41场', u:'/#news'},
+    {t:'无盒手办估价 12条维度', u:'/#comments'},
+    {t:'模型喷漆上色稀释比例与干燥时间', u:'/#faq'},
+    {t:'合金成品机甲重量与关节耐久', u:'/#faq'},
+    {t:'手办展示柜层高与防尘方案', u:'/#categories'},
+    {t:'模玩改造赛补报名 11月20日截止', u:'/#updates'},
+    {t:'来源可信度分层与核对动作', u:'/#trust'},
+    {t:'人气榜单 本周讨论热度', u:'/#rank'}
+  ];
+
+  function render(q){
+    if(!resultBox) return;
+    var key = (q || '').trim().toLowerCase();
+    resultBox.innerHTML = '';
+    if(!key){
+      resultBox.classList.remove('open');
+      return;
+    }
+    var hits = index.filter(function(item){
+      return item.t.toLowerCase().indexOf(key) !== -1;
+    });
+    if(hits.length === 0){
+      var p = document.createElement('p');
+      p.className = 'empty';
+      p.textContent = '没有找到与“' + q + '”相关的条目，试试“盲盒”“寄售”“改造件”。';
+      resultBox.appendChild(p);
+    } else {
+      hits.slice(0,6).forEach(function(item){
+        var a = document.createElement('a');
+        a.href = item.u;
+        a.textContent = item.t;
+        a.addEventListener('click', function(){
+          resultBox.classList.remove('open');
+        });
+        resultBox.appendChild(a);
+      });
+    }
+    resultBox.classList.add('open');
+  }
+
+  if(input){
+    var timer = null;
+    input.addEventListener('input', function(){
+      clearTimeout(timer);
+      var v = input.value;
+      timer = setTimeout(function(){ render(v); }, 160);
+    });
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ resultBox.classList.remove('open'); input.blur(); }
+    });
+  }
+  if(btn){
+    btn.addEventListener('click', function(){ render(input.value); });
+  }
+  document.addEventListener('click', function(e){
+    if(resultBox && !resultBox.contains(e.target) && e.target !== input && e.target !== btn && !btn.contains(e.target)){
+      resultBox.classList.remove('open');
+    }
+  });
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  function onScroll(){
+    if(!toTop) return;
+    if(window.scrollY > 520){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* 侧栏滚动高亮 */
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var sections = sideLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  if('IntersectionObserver' in window && sections.length){
+    var visible = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        visible[en.target.id] = en.isIntersecting ? en.intersectionRatio : 0;
+      });
+      var bestId = null, bestVal = 0;
+      Object.keys(visible).forEach(function(id){
+        if(visible[id] > bestVal){ bestVal = visible[id]; bestId = id; }
+      });
+      sideLinks.forEach(function(a){
+        var id = a.getAttribute('href').replace('/#','');
+        if(id === bestId && bestVal > 0){ a.classList.add('active'); }
+        else { a.classList.remove('active'); }
+      });
+    }, {rootMargin:'-25% 0px -55% 0px', threshold:[0,0.1,0.5,1]});
+    sections.forEach(function(s){ io.observe(s); });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "玩物社区入口",
+  "inLanguage": "zh-CN",
+  "description": "汇总潮玩手办、模型玩具与收藏玩家讨论的入口页，含盲盒抽检、模型改造、二手寄售与展会排期栏目。",
+  "dateModified": "2026-11-08"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "盲盒隐藏款概率标注 1/144，到底是整箱还是单盒？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "看分母单位有没有写明。只写 1/144 的多数店铺实际指整箱语境，写明单盒概率的才按单盒算。11月6日抽检名单里有3家因这处未写清被下架改标。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "二手寄售验收为什么从3天延到5天？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "10月下旬寄售单量上涨，运损申诉集中在封口与内衬两处，3天不够完成录像复核，多家平台把周期延到5天并要求开箱录像。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "HG 金属关节改造件怎么选，B-07 适合什么机体？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "B-07 重量偏中，适合长期站立展示、摆姿势不频繁的机体，肩部卡榫偏紧，拆装要慢。11月4日补货420套。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "无盒手办还能寄售吗，扣价大概多少？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能寄售，但原盒缺失、内衬不全、说明书遗失三项主要扣价，三家平台比例不一，11月8日上线的讨论帖列出12条估价维度可供对照。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "线下展会限定品，提前多久到场比较稳？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "按限量数分。80体级别首发限定往届在开场后40分钟内清场，需早到两小时以上；300体级别第二梯队10点前到场通常有余量。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "模型喷漆上色，稀释比例和干燥时间怎么定？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "按漆种分，不按品牌分，先在小块废板件上试。干燥时间受湿度影响大，干燥季与梅雨季相差接近一倍，上色前先看当天湿度。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+  </html>
